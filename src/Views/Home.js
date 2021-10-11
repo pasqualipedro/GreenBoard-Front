@@ -1,12 +1,14 @@
 import React from 'react';
-import Button from '../Components/Button'
+import ButtonLink from '../Components/ButtonLink';
+
+
 
 
 const Home = () => {
     return (
         <>
-            <Button text="SignUp"/>
-            <Button text="LogIn" />
+            <ButtonLink text="SignUp" endpoint="/signup" />
+            <ButtonLink text="LogIn" endpoint="/login" />
         </>
     )
 }

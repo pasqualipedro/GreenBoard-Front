@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <Switch>
-        <Route path="/home" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/login" component={LogIn} />
         <Route path="/signup" component={SignUp} />
         {/* <Route path="/newcategory" component={NewCategory} />
