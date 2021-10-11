@@ -12,7 +12,7 @@ import SignUp from "./Views/SignUp";
 
 
 /**Global-Style from styled components*/
-import { createGlobalStyle } from "styled-components"; /*----> ?? CONFIRMAR SE ESTA CORRETO*/
+/* import { createGlobalStyle } from "styled-components"; */ /*----> ?? CONFIRMAR SE ESTA CORRETO*/
 
 
 function App() {
