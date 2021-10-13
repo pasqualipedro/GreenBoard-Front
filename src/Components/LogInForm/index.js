@@ -2,16 +2,22 @@ import {React, Component} from 'react'
 import Button from '../Button/index'
 
 class LoginForm extends Component {
+
+    state = {
+        username:``,
+        password:``
+    }
+
     render(){
         return(
             <>
-                <div>
+                <form>
                     <label>Email</label>
-                    <input type={this.props.type}/>
+                    <input type="email" name={this.props.name}/>
                     <label>Password</label>
                     <input type={this.props.type}/>
-                    <Button text = 'Enter'/>
-                </div>
+                    <Button type ="submit" text = 'Enter'/>
+                </form>
             </>
         )
     }

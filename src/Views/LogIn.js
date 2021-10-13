@@ -5,7 +5,7 @@ import LoginForm from "../Components/LogInForm"
 const LogIn = () => {
     return (
         <>
-            <LoginForm type="e-mail"/>
+            <LoginForm type="text"/>
         </>
     )
 }
