@@ -2,10 +2,11 @@ import React from 'react';
 import LoginForm from "../Components/LogInForm"
 
 
-const LogIn = () => {
+const LogIn = (props) => {
     return (
-        <>
-            <LoginForm type="text"/>
+        <>  
+            <h1>LogIn Page</h1>
+            <LoginForm type="text" {...props} />
         </>
     )
 }

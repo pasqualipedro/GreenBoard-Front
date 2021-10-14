@@ -1,6 +1,6 @@
 import {React, Component} from 'react';
 import Button from '../Button/index';
-import apiConfig from '../../Api/api.config';
+import api from '../../Api/api.config';
 
 
 class LoginForm extends Component {
@@ -14,18 +14,18 @@ class LoginForm extends Component {
         const {name, value} = event.target;
         this.setState({
             [name]: value
-        })
-    }
+        });
+    };
 
     handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await apiConfig.login(this.state);
-            this.props.history.push() //adicionar a rota após o login correto
+            await api.login(this.state);
+            this.props.history.push("/dashboard"); //adicionar a rota após o login correto
         } catch (error) {
-            
-        }
-    }
+            console.log(error);    
+        };
+    };
 
     render(){
         return(
