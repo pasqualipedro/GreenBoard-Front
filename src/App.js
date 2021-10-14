@@ -20,7 +20,7 @@ function App() {
     <>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/login" component={LogIn} />
+        <Route path="/login" render = {(props) => <LogIn {...props}/>}/>
         <Route path="/signup" component={SignUp} />
         {/* <Route path="/newcategory" component={NewCategory} />
         <Route path="/dashboard" component={DashBoard} />
