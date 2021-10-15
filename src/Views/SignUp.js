@@ -2,11 +2,11 @@ import React from 'react';
 import SignupForm from "../Components/SignUpForm"
 
 
-const SignUp = () => {
+const SignUp = (props) => {
     return (
         <>
             <h1>SignUp Page</h1>
-            <SignupForm type="text"/>
+            <SignupForm type="text" {...props}/>
         </>
     )
 }
