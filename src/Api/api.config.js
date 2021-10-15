@@ -17,7 +17,17 @@ class Api {
         catch (error) {
             throw new Error(error);
         };
-    }; 
+    };
+    
+    signup = async (payload) => {
+        try {
+            const {data} = await this.api.post('/signup', payload)
+            const { token } = data
+            localStorage.setItem('token', token)
+        } catch (error) {
+            throw new Error(error);
+        }
+    }
 };
 
 export default new Api()

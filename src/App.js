@@ -21,8 +21,8 @@ function App() {
     <>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/login" render = {(props) => <LogIn {...props} /> } />
-        <Route path="/signup" component={SignUp} />
+        <Route path="/login" render = {(props) => <LogIn {...props} /> }/>
+        <Route path="/signup" render = {(props) => <SignUp {...props} />}/>
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/category" component={Category} />
         {/* <Route path="/newcategory" component={NewCategory} />
