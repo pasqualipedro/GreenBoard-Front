@@ -1,12 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
+import CategoryForm from '../Components/CategoryForm';
+import CategoryList from '../Components/CategoryList';
+import api from '../Api/api.config';
 
 
-const Category = () => {
-    return (
-        <>  
-            <h1>Category!!!</h1>
-        </>
-    )
+class Category extends Component {
+    state = {
+        list: []
+    }
+    
+    getAllCategories = async () => {
+        try {
+            const allCategories = await api.categoryFetchAll()
+            this.setState({
+                list: allCategories
+            })
+        } catch (error) {
+            
+        }
+    }
+
+    componentDidMount(){
+        this.getAllCategories();
+    }
+    
+    render(){
+        return (
+            <>  
+                <h1>Category!!!</h1>
+                <CategoryForm updateList = {this.getAllCategories}/>
+                <CategoryList {...this.state}/>
+            </>
+        )
+    }
 }
 
 export default Category

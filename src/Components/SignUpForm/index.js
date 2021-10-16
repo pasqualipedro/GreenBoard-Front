@@ -8,7 +8,8 @@ class SignupForm extends Component {
         lastname: "",
         age: "",
         email: "",
-        password: ""
+        password: "",
+        confirmation:""
     }
 
     handleInput = (event) => {
@@ -44,7 +45,7 @@ class SignupForm extends Component {
                     <label>Password:</label>
                     <input type="password" name = "password" value = {this.state.password} onChange = {this.handleInput}/>
                     <label>Confirm Password:</label>
-                    <input type="password" name = "confirmation" value = {this.state.password} onChange = {this.handleInput}/>
+                    <input type="password" name = "confirmation" value = {this.state.confirmation} onChange = {this.handleInput}/>
                     <Button type = "submit" text = 'Enter'/>
                 </form>
             </>

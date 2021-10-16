@@ -5,6 +5,20 @@ class Api {
         this.api = axios.create({
             baseURL: 'http://localhost:5000'
         });
+        this.api.interceptors.request.use(
+            (requestConfig) => {
+                const token = localStorage.getItem('token')
+                if(token) {
+                    requestConfig.headers = {
+                        Authorization: `Bearer ${token}`
+                    }
+                }
+                return requestConfig
+            },
+            (error) => {
+                console.log(error)
+            } 
+        )
     }
 
     login = async (payload) => {
@@ -22,10 +36,26 @@ class Api {
     signup = async (payload) => {
         try {
             const {data} = await this.api.post('/signup', payload)
-            const { token } = data
-            localStorage.setItem('token', token)
         } catch (error) {
-            throw new Error(error);
+            throw error.response;
+        }
+    }
+
+    categoryCreate = async (payload) => {
+        try {
+            const {data} = await this.api.post('/category/add',payload)
+            console.log(data)
+        } catch (error) {
+            throw error.response;
+        }
+    }
+
+    categoryFetchAll = async () => {
+        try {
+            const {data} = await this.api.get('/category/all')
+            return data.allCategoriesFromUser
+        } catch (error) {
+            throw error.response;
         }
     }
 };
