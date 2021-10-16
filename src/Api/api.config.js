@@ -36,6 +36,7 @@ class Api {
     signup = async (payload) => {
         try {
             const {data} = await this.api.post('/signup', payload)
+            console.log(data)
         } catch (error) {
             throw error.response;
         }
@@ -46,6 +47,7 @@ class Api {
             const {data} = await this.api.post('/category/add',payload)
             console.log(data)
         } catch (error) {
+            console.log(error);
             throw error.response;
         }
     }

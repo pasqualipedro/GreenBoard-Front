@@ -1,7 +1,5 @@
-import { render } from "@testing-library/react"
-import react, { Component } from "react"
+import React, { Component } from "react"
 import Button from "../Button"
-import CategoryList from "../CategoryList"
 import api from "../../Api/api.config"
 
 class CategoryForm extends Component {
@@ -23,8 +21,9 @@ class CategoryForm extends Component {
         try {
             await api.categoryCreate(this.state);
             await this.props.updateList()
+            this.props.history.push("/dashboard");
         } catch (error) {
-            
+            console.log(error)
         }
     }
 
@@ -40,7 +39,6 @@ class CategoryForm extends Component {
                     <input type = "number" name = "budget" value = {this.state.budget} onChange = {this.handleInput}/>
                     <Button type = "submit" text = "Add"/>
                 </form>
-                    <Button type = "submit" text = "Enter"/>
             </div>
         )
     }

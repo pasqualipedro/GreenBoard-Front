@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CategoryListItem from '../CategoryListItem'
+
 
 class CategoryList extends Component{
     
@@ -9,7 +9,6 @@ class CategoryList extends Component{
                 {this.props.list.map((element, index) => {
                    return(
                         <h1>{element.name}</h1>                
-
                    )
                 })}
             </div>
