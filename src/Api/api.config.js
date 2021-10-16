@@ -36,6 +36,7 @@ class Api {
     signup = async (payload) => {
         try {
             const {data} = await this.api.post('/signup', payload)
+            console.log(data)
         } catch (error) {
             throw error.response;
         }
@@ -46,6 +47,7 @@ class Api {
             const {data} = await this.api.post('/category/add',payload)
             console.log(data)
         } catch (error) {
+            console.log(error);
             throw error.response;
         }
     }
@@ -54,6 +56,24 @@ class Api {
         try {
             const {data} = await this.api.get('/category/all')
             return data.allCategoriesFromUser
+        } catch (error) {
+            throw error.response;
+        }
+    }
+
+    categoryDelete = async (catId) => {
+        try {
+            const {data} = await this.api.delete(`/category/delete/${catId}`)
+            return data.delUserCategory
+        } catch (error) {
+            throw error.response;
+        }
+    }
+
+    categoryUptade = async (catId) => {
+        try {
+            const {data} = await this.api.put(`/category/update/${catId}`)
+            return data.getOneCategoryFromUser
         } catch (error) {
             throw error.response;
         }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CategoryForm from '../Components/CategoryForm';
 import CategoryList from '../Components/CategoryList';
 import api from '../Api/api.config';
+import ButtonLink from '../Components/ButtonLink';
 
 
 class Category extends Component {
@@ -23,13 +24,15 @@ class Category extends Component {
     componentDidMount(){
         this.getAllCategories();
     }
-    
+
+ 
     render(){
         return (
             <>  
                 <h1>Category!!!</h1>
                 <CategoryForm updateList = {this.getAllCategories}/>
-                <CategoryList {...this.state}/>
+                <CategoryList {...this.state} updateList = {this.getAllCategories}/>
+                <ButtonLink text = "Enter" endpoint="/dashboard"/>
             </>
         )
     }
