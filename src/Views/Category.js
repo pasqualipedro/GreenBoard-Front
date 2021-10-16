@@ -31,7 +31,7 @@ class Category extends Component {
             <>  
                 <h1>Category!!!</h1>
                 <CategoryForm updateList = {this.getAllCategories}/>
-                <CategoryList {...this.state}/>
+                <CategoryList {...this.state} updateList = {this.getAllCategories}/>
                 <ButtonLink text = "Enter" endpoint="/dashboard"/>
             </>
         )

@@ -6,7 +6,7 @@ class Button extends Component{
     {
         return(
             <>
-                <button>{this.props.text}</button>  
+                <button onClick = {this.props.action}>{this.props.text}</button>  
             </>
         )
     }

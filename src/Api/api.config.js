@@ -60,6 +60,24 @@ class Api {
             throw error.response;
         }
     }
+
+    categoryDelete = async (catId) => {
+        try {
+            const {data} = await this.api.delete(`/category/delete/${catId}`)
+            return data.delUserCategory
+        } catch (error) {
+            throw error.response;
+        }
+    }
+
+    categoryUptade = async (catId) => {
+        try {
+            const {data} = await this.api.put(`/category/update/${catId}`)
+            return data.getOneCategoryFromUser
+        } catch (error) {
+            throw error.response;
+        }
+    }
 };
 
 export default new Api()
