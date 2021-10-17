@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ButtonLink from '../Components/ButtonLink';
 
-const Dashboard = () => {
-    return (
-        <>  
-            <h1>DASHBOARD!!!</h1>
-            <ButtonLink text = "Add/Edit Categories" endpoint="/category"/>
-            <ButtonLink text = "Add/Edit Transactions" endpoint="/category"/>
-            <ButtonLink text = "Settings" endpoint="/category"/>
+class Dashboard extends Component {
+    state = {
 
-        </>
-    )
-}
+    };
 
-export default Dashboard
+
+    componentDidMount(){
+        
+    }
+
+    handleSubmit = () => {
+
+    }
+
+    render(){
+        return (
+            <>  
+                <h1>DASHBOARD!!!</h1>
+                <ButtonLink text = "Add/Edit Categories" endpoint="/category"/>
+                <ButtonLink text = "Add/Edit Transactions" endpoint="/category"/>
+                <ButtonLink text = "Settings" endpoint="/settings" onClick={this.handleSubmit}/>
+    
+            </>
+        )
+    };
+
+};
+
+export default Dashboard;
