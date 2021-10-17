@@ -1,15 +1,12 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+
+/**Importing Views/pages */
 import Home from "./Views/Home";
 import LogIn from "./Views/LogIn";
 import SignUp from "./Views/SignUp";
 import Dashboard from "./Views/Dashboard";
 import Category from "./Views/Category";
-
-/**Importing Components */
-
-
-/**Importing Views/pages */
 
 
 /**Global-Style from styled components*/
