@@ -7,23 +7,32 @@ import ButtonLink from '../Components/ButtonLink';
 
 class Category extends Component {
     state = {
+        loading: false,
         list: []
-    }
+    };
     
     getAllCategories = async () => {
+        this.setState({
+            loading: true
+        });
         try {
             const allCategories = await api.categoryFetchAll()
             this.setState({
                 list: allCategories
-            })
+            });
         } catch (error) {
             
+        } finally {
+            this.setState({
+                loading: false
+            });
         }
-    }
+        
+    };
 
     componentDidMount(){
         this.getAllCategories();
-    }
+    };
 
  
     render(){
@@ -31,11 +40,14 @@ class Category extends Component {
             <>  
                 <h1>Category!!!</h1>
                 <CategoryForm updateList = {this.getAllCategories}/>
+                { this.state.loading? <h3>Loading</h3> :
                 <CategoryList {...this.state} updateList = {this.getAllCategories}/>
+                }
                 <ButtonLink text = "Enter" endpoint="/dashboard"/>
             </>
-        )
-    }
-}
+        );
+    };
+
+};
 
 export default Category

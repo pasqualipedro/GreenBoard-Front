@@ -5,22 +5,27 @@ class Api {
         this.api = axios.create({
             baseURL: 'http://localhost:5000'
         });
+
+        /**
+         * INTERCEPTORS = 
+         */
         this.api.interceptors.request.use(
             (requestConfig) => {
-                const token = localStorage.getItem('token')
+                const token = localStorage.getItem('token');
                 if(token) {
                     requestConfig.headers = {
                         Authorization: `Bearer ${token}`
-                    }
-                }
+                    };
+                };
                 return requestConfig
             },
             (error) => {
                 console.log(error)
             } 
-        )
-    }
+        );
+    };
 
+    /** USER LOGIN */
     login = async (payload) => {
         try{
             const { data } = await this.api.post('/login', payload); 
@@ -33,6 +38,7 @@ class Api {
         };
     };
     
+    /** USER SIGNUP */
     signup = async (payload) => {
         try {
             const {data} = await this.api.post('/signup', payload)
@@ -42,6 +48,7 @@ class Api {
         }
     }
 
+    /** CREATE A CATEGORY */
     categoryCreate = async (payload) => {
         try {
             const {data} = await this.api.post('/category/add',payload)
@@ -52,6 +59,7 @@ class Api {
         }
     }
 
+    /** FETCHING ALL CATEGORIES */
     categoryFetchAll = async () => {
         try {
             const {data} = await this.api.get('/category/all')
@@ -61,6 +69,7 @@ class Api {
         }
     }
 
+    /** DELETE A CATEGORY */
     categoryDelete = async (catId) => {
         try {
             const {data} = await this.api.delete(`/category/delete/${catId}`)
@@ -70,7 +79,8 @@ class Api {
         }
     }
 
-    categoryUpdate = async (catId, payload) => {
+    /** UPDATING A CATEGORY */
+    categoryUptade = async (catId, payload) => {
         try {
             const {data} = await this.api.put(`/category/update/${catId}`,payload)
             return data.getOneCategoryFromUser
