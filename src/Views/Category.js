@@ -16,12 +16,12 @@ class Category extends Component {
             loading: true
         });
         try {
-            const allCategories = await api.categoryFetchAll()
+            const allCategories = await api.categoryFetchAll();
             this.setState({
                 list: allCategories
             });
         } catch (error) {
-            
+            console.log(error, `Unable to fetch all categories`);
         } finally {
             this.setState({
                 loading: false
@@ -34,14 +34,14 @@ class Category extends Component {
         this.getAllCategories();
     };
 
- 
+
     render(){
         return (
             <>  
                 <h1>Category!!!</h1>
-                <CategoryForm updateList = {this.getAllCategories}/>
-                { this.state.loading? <h3>Loading</h3> :
-                <CategoryList {...this.state} updateList = {this.getAllCategories}/>
+                <CategoryForm updateList={this.getAllCategories}/>
+                { this.state.loading? <h3>Loading</h3> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
+                <CategoryList {...this.state} updateList={this.getAllCategories} />
                 }
                 <ButtonLink text = "Enter" endpoint="/dashboard"/>
             </>
@@ -50,4 +50,4 @@ class Category extends Component {
 
 };
 
-export default Category
+export default Category;
