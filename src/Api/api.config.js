@@ -70,9 +70,9 @@ class Api {
         }
     }
 
-    categoryUptade = async (catId) => {
+    categoryUpdate = async (catId, payload) => {
         try {
-            const {data} = await this.api.put(`/category/update/${catId}`)
+            const {data} = await this.api.put(`/category/update/${catId}`,payload)
             return data.getOneCategoryFromUser
         } catch (error) {
             throw error.response;
