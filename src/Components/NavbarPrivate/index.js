@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ButtonLink from "../ButtonLink";
 
 
 class NavbarPrivate extends Component {
@@ -6,7 +7,10 @@ class NavbarPrivate extends Component {
 render() {
     return (
         <>
-        <h1>Thats the NavbarPrivate</h1>
+        <ButtonLink text = "Categories" endpoint = "/category"/>
+        <ButtonLink text = "Transactions" endpoint = "/transactions"/>
+        <ButtonLink text = "DashBoard" endpoint = "/dashboard"/>
+        <ButtonLink text = "Settings" endpoint = "/settings"/>
         </>
     )
 }
