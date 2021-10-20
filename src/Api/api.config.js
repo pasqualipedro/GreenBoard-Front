@@ -20,11 +20,14 @@ class Api {
                 return requestConfig
             },
             (error) => {
-                console.log(error)
+                console.log(error);
             } 
         );
     };
 
+    /**
+     * USER REQUESTS 
+     */
     /** USER LOGIN */
     login = async (payload) => {
         try{
@@ -41,53 +44,106 @@ class Api {
     /** USER SIGNUP */
     signup = async (payload) => {
         try {
-            const {data} = await this.api.post('/signup', payload)
-            console.log(data)
+            const {data} = await this.api.post('/signup', payload);
+            console.log(data);
         } catch (error) {
             throw error.response;
         }
-    }
+    };
 
+
+
+    /**
+     * CATEGORIES REQUESTS
+     */
     /** CREATE A CATEGORY */
     categoryCreate = async (payload) => {
         try {
-            const {data} = await this.api.post('/category/add',payload)
-            console.log(data)
+            const {data} = await this.api.post('/category/add',payload);
+            console.log(data);
         } catch (error) {
             console.log(error);
             throw error.response;
         }
-    }
+    };
 
     /** FETCHING ALL CATEGORIES */
     categoryFetchAll = async () => {
         try {
-            const {data} = await this.api.get('/category/all')
-            return data.allCategoriesFromUser
+            const {data} = await this.api.get('/category/all');
+            return data.allCategoriesFromUser;
         } catch (error) {
             throw error.response;
         }
-    }
+    };
 
     /** DELETE A CATEGORY */
     categoryDelete = async (catId) => {
         try {
-            const {data} = await this.api.delete(`/category/delete/${catId}`)
-            return data.delUserCategory
+            const {data} = await this.api.delete(`/category/delete/${catId}`);
+            return data.deleteUserCategory;
         } catch (error) {
             throw error.response;
         }
-    }
+    };
 
     /** UPDATING A CATEGORY */
-    categoryUptade = async (catId, payload) => {
+    categoryUpdate = async (catId, payload) => {
         try {
-            const {data} = await this.api.put(`/category/update/${catId}`,payload)
-            return data.getOneCategoryFromUser
+            const {data} = await this.api.put(`/category/update/${catId}`, payload);
+            return data.updateUserCategory;
         } catch (error) {
             throw error.response;
         }
-    }
+    };
+
+
+
+    /**
+     * TRANSACTION REQUESTS 
+     */
+    /** CREATE A TRANSACTION */
+    transactionCreate = async (payload) => {
+        try {
+            const {data} = await this.api.post(`/transaction/add`, payload);
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        };
+    };
+
+    /** FETCHING ALL TRANSACTIONS */
+    transactionFetchAll = async () => {
+        try {
+            const {data} = await this.api.get(`/transaction/all`);
+            return data.allTransactionsFromUser;
+        } catch (error) {
+            throw error.response;
+        };
+    };
+
+    /** DELETE A TRANSACTION */
+    transactionDelete = async (transId) => {
+        try {
+            const {data} = await this.api.delete(`/transaction/delete/${transId}`);
+            return data.deleteUserTransaction;
+        } catch (error) {
+            throw error.response;
+        };
+    }; 
+
+    /** UPDATING A TRANSACTION */
+    transactionUpdate = async (transId, payload) => {
+        try {
+            const {data} = await this.api.put(`/transaction/update/${transId}`);
+            return data.updateUserTransaction;
+        } catch (error) {
+            throw error.response;
+        };
+    };
+
 };
+
+
 
 export default new Api()
