@@ -7,6 +7,7 @@ class CategoryForm extends Component {
     name: "",
     description: "",
     type: "",
+    label: "",
     inUse: "",
     budget: "",
   };
@@ -23,7 +24,7 @@ class CategoryForm extends Component {
     try {
       await api.categoryCreate(this.state);
       await this.props.updateList();
-      this.props.history.push("/dashboard");
+      this.props.history.push(`/dashboard`);
     } catch (error) {
       console.log(error);
     }

@@ -45,7 +45,7 @@ class Category extends Component {
                 <NavbarPrivate/>
                 <CategoryForm updateList={this.getAllCategories}/>
                 { this.state.loading? <h3>Loading</h3> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
-                <CategoryList {...this.state} updateList={this.getAllCategories} />
+                <CategoryList {...this.state} updateList={ this.getAllCategories } />
                 }
                 <ButtonLink text = "Enter" endpoint="/dashboard"/>
             </>
