@@ -2,7 +2,6 @@ import React from 'react';
 import LoginForm from "../Components/LogInForm"
 import NavbarPublic from '../Components/NavbarPublic';
 
-
 const LogIn = (props) => {
     return (
         <>  
