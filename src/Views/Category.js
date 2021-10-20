@@ -3,6 +3,8 @@ import CategoryForm from '../Components/CategoryForm';
 import CategoryList from '../Components/CategoryList';
 import api from '../Api/api.config';
 import ButtonLink from '../Components/ButtonLink';
+import NavbarPrivate from '../Components/NavbarPrivate';
+import NavbarPublic from '../Components/NavbarPublic';
 
 
 class Category extends Component {
@@ -39,7 +41,9 @@ class Category extends Component {
         return (
             <>  
                 <h1>Category!!!</h1>
-                <CategoryForm updateList={ this.getAllCategories }/>
+                <NavbarPublic/>
+                <NavbarPrivate/>
+                <CategoryForm updateList={this.getAllCategories}/>
                 { this.state.loading? <h3>Loading</h3> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
                 <CategoryList {...this.state} updateList={ this.getAllCategories } />
                 }
