@@ -135,7 +135,7 @@ class Api {
     /** UPDATING A TRANSACTION */
     transactionUpdate = async (transId, payload) => {
         try {
-            const {data} = await this.api.put(`/transaction/update/${transId}`);
+            const {data} = await this.api.put(`/transaction/update/${transId}`, payload);
             return data.updateUserTransaction;
         } catch (error) {
             throw error.response;
