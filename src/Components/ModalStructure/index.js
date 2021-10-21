@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
+  width: 75vw;
+  height: 75vh;
+  background-color: blue;
+
   .btn-modal {
     padding: 10px 20px;
     display: block;
@@ -9,7 +13,7 @@ const Wrapper = styled.div`
     font-size: 18px;
   }
 
-  .modalPlaylist,
+  .modal,
   .overlayLayer {
     width: 100vw;
     height: 100vh;
@@ -23,7 +27,7 @@ const Wrapper = styled.div`
   .overlayLayer {
     background: rgba(49, 49, 49, 0.8);
   }
-  .modalPlaylist-content {
+  .modal-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -47,23 +51,6 @@ const Wrapper = styled.div`
     padding: 5px 7px;
   }
 
-  .playlistCover {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-  }
-
-  .trackList {
-    text-decoration: none;
-    color: rgb(23, 32, 42);
-  }
-
-  .coverPlayButton {
-    padding: 0;
-    margin: 15px;
-    display: flex;
-    transition: 400ms;
-    cursor: pointer;
 
     &:hover {
       transform: scale(1.025);
@@ -71,24 +58,21 @@ const Wrapper = styled.div`
   }
 `;
 
-class Test extends Component {
+class ModalStructure extends Component {
   render() {
     return (
-      <Wrapper>
-        {this.props.open && (
-          <div className="modalPlaylist">
-            <div
-              className="overlayLayer"
-              onClick={this.props.togglePlaylist}
-            ></div>
-            <div className="modalPlaylist-content">
-                {this.props.children}
-            </div>
+      this.props.open && (
+        <Wrapper>
+          <div className="modal">
+            <div className="overlayLayer" onClick={this.props.toggleModal} ></div>
+            <div className="modal-content">
+              {this.props.children}
+            </div>    
           </div>
-        )}
-      </Wrapper>
+        </Wrapper>
+      )
     );
   }
 }
 
-export default Test;
+export default ModalStructure;

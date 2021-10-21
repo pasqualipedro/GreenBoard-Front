@@ -3,7 +3,6 @@ import api from "../../Api/api.config"
 import Button from "../Button"
 
 class CategoryListItem extends Component {
-    /* const { name, description, budget, type, label } = this.props.element; */
     state = {
         name: this.props.name,
         description: this.props.description,

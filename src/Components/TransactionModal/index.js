@@ -1,13 +1,14 @@
 import React from "react";
 import { Component } from "react";
-import Test from "./indexTest";
+import ModalStructure from "../ModalStructure";
 
 
-class TransactionModal extends Component {
+class TransactionModalContent extends Component {
   render() {
     return (
-      <Test open={ this.props.open && this.props.playlistInfo.id } >
-              <h1>I´m feeling like... {this.props.mood}</h1>
+      <ModalStructure open={ this.props.open && this.props.updateList.id } >
+        <h1>Just testing the Modal Content</h1>
+              {/* <h1>I´m feeling like... {this.props.mood}</h1>
               <div className="alignInY">
                 <a
                   href={this.props.playlistInfo.external_urls.spotify}
@@ -39,10 +40,10 @@ class TransactionModal extends Component {
                     </li>
                   </a>
                 ))}
-              </ul>
-      </Test>
+              </ul> */}
+      </ModalStructure>
     );
-  }
-}
+  };
+};
 
-export default TransactionModal;
+export default TransactionModalContent;

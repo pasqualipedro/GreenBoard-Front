@@ -8,6 +8,7 @@ import SignUp from "./Views/SignUp";
 import Dashboard from "./Views/Dashboard";
 import Category from "./Views/Category";
 import Settings from "./Views/Settings";
+import TestPage from "./Views/TestPage";
 
 
 /**Global-Style from styled components*/
@@ -24,6 +25,7 @@ function App() {
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/category" component={Category} />
         <Route path="/settings" component={Settings} />
+        <Route path="/test" component={TestPage} />
       </Switch>
     </>
   );
