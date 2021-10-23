@@ -29,7 +29,7 @@ const NavbarPublic = () =>  {
         <AppBar position="static">
             <CssBaseline/>
             <Toolbar>
-            <Typography variant="h4" className={classes.logo}> <a href = "/" className='text-decoration-none' style = {{color: 'black'}}> GreenBook </a> </Typography>
+            <Typography variant="h4" className={classes.logo}> <a href = "/" className='text-decoration-none' style = {{color: 'white'}}> GreenBook </a> </Typography>
                 <ButtonLink text="SignUp" endpoint="/signup"/>
                 <ButtonLink text="LogIn"  endpoint="/login"/>
             </Toolbar>
