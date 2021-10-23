@@ -1,7 +1,46 @@
 import {React, Component} from 'react';
 import Button from '../Button/index';
 import api from '../../Api/api.config';
+import ButtonLink from '../ButtonLink';
+import styled from 'styled-components'
 
+const Container = styled.div`
+    {props.className};
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-top: 20px; 
+    @media only screen and (min-width: 290px) and (max-width: 550px) {
+        padding: 8px;
+        footer{
+        margin-top: 10px;
+        flex-direction: column
+        }
+        footer div div a svg {
+        font-size: 22px
+        }
+        footer div h3{
+        font-size: 17px
+        }
+        footer div h5{
+        font-size: 16px
+        }
+    }
+    @media only screen and (min-width: 550px) and (max-width: 720px) {
+        footer{
+        margin-top: 20px;
+        flex-direction: column
+        }
+        footer div div a svg {
+            font-size: 30px
+        }
+        footer div h3{
+            font-size: 22px
+        }
+        footer div h5{
+            font-size: 19px
+        }
+    }
+`
 
 class LoginForm extends Component {
 
@@ -30,13 +69,19 @@ class LoginForm extends Component {
     render(){
         return(
             <>
-                <form onSubmit = {this.handleSubmit}>
-                    <label>Email</label>
-                    <input type = "email" name= "email" value = {this.state.email} onChange = {this.handleInput}/>
-                    <label>Password</label>
-                    <input type="password" name = "password" value = {this.state.password} onChange = {this.handleInput}/>
-                    <Button type ="submit" text = 'Enter'/>
-                </form>
+                <div style={{backgroundColor:'#C1FAE3'}}>
+                    <Container>
+                        <form onSubmit = {this.handleSubmit} className= 'd-flex flex-column'>
+                            <label className = 'p-1'><b>Email:</b></label>
+                            <input type = "email" name= "email" value = {this.state.email} onChange = {this.handleInput}/>
+                            <label className = 'p-1'><b>Password:</b></label>
+                            <input type="password" name = "password" value = {this.state.password} onChange = {this.handleInput}/>
+                        </form>
+                    </Container>
+                    <div className = 'text-center'>
+                        <ButtonLink type ="submit" text = 'Enter'/>
+                    </div>
+                </div>
             </>
         )
     }
