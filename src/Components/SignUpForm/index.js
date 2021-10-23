@@ -2,6 +2,7 @@ import {React, Component} from 'react'
 import Button from '../Button/index'
 import api from '../../Api/api.config'
 
+
 class SignupForm extends Component {
     state = {
         name: "",
@@ -33,7 +34,7 @@ class SignupForm extends Component {
     render(){
         return(
             <>
-                <form onSubmit = {this.handleSubmit}>
+                <form onSubmit = {this.handleSubmit} className = 'd-flex flex-column p-4'>
                     <label>Name:</label>
                     <input type= "text" name = "name" value = {this.state.name} onChange = {this.handleInput}/>
                     <label>Lastname:</label>

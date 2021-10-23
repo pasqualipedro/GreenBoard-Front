@@ -7,7 +7,6 @@ const LogIn = (props) => {
     return (
         <>  
             <NavbarPublic/>
-            <h1>LogIn Page</h1>
             <LoginForm type="text" {...props} />
             <Footer/>
         </>
