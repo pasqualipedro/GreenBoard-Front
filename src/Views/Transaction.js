@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
-import CategoryForm from '../Components/CategoryForm';
-import CategoryList from '../Components/CategoryList';
+import TransactionForm from '../Components/TransactionForm';
+import TransactionList from '../Components/TransactionList';
 import api from '../Api/api.config';
 import ButtonLink from '../Components/ButtonLink';
 import NavbarPrivate from '../Components/NavbarPrivate';
 import NavbarPublic from '../Components/NavbarPublic';
 
 
-class Category extends Component {
+class Transaction extends Component {
     state = {
         loading: false,
         list: []
     };
     
-    getAllCategories = async () => {
+    getAllTransactions = async () => {
         this.setState({
             loading: true
         });
         try {
-            const allCategories = await api.categoryFetchAll();
+            const allTransactions = await api.transactionFetchAll();
             this.setState({
-                list: allCategories
+                list: allTransactions
             });
         } catch (error) {
-            console.log(error, `Unable to fetch all categories`);
+            console.log(error, `Unable to fetch all transactions`);
         } finally {
             this.setState({
                 loading: false
@@ -33,19 +33,19 @@ class Category extends Component {
     };
 
     componentDidMount(){
-        this.getAllCategories();
+        this.getAllTransactions();
     };
 
 
     render(){
         return (
             <>  
-                <h1>Category!!!</h1>
+                <h1>Transaction!!!</h1>
                 <NavbarPublic/>
                 <NavbarPrivate/>
-                <CategoryForm updatedCategoryList={this.getAllCategories}/>
+                <TransactionForm updatedTransactionList={this.getAllTransactions}/>
                 { this.state.loading? <h3>Loading</h3> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
-                <CategoryList {...this.state} updatedCategoryList={ this.getAllCategories } />
+                <TransactionList {...this.state} updatedTransactionList={ this.getAllTransactions } />
                 }
                 <ButtonLink text = "Enter" endpoint="/dashboard"/>
             </>
@@ -54,4 +54,4 @@ class Category extends Component {
 
 };
 
-export default Category;
+export default Transaction;

@@ -1,10 +1,7 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import ButtonLink from '../Components/ButtonLink';
 import NavbarPublic from '../Components/NavbarPublic';
 import NavbarPrivate from '../Components/NavbarPrivate';
-import ModalStructure from '../Components/ModalStructure';
-import CategoryForm from '../Components/CategoryForm';
-import MaterialModal from '../Components/MaterialModal';
 
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -16,15 +13,15 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 function DashBoard() {
   const [openFormCategory, setOpenFormCategory] = useState(false);
-  const [openFormTransaction, setOpenFormTransaction] = useState(false);  
+/*   const [openFormTransaction, setOpenFormTransaction] = useState(false);   */
 
   const handleClickOpen = () => {
-    setOpenFormTransaction(true);
+    /* setOpenFormTransaction(true); */
     setOpenFormCategory(true);
   };
 
   const handleClose = () => {
-    setOpenFormTransaction(false);
+/*     setOpenFormTransaction(false); */
     setOpenFormCategory(false);
   };
 

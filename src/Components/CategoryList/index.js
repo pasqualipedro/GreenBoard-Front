@@ -21,7 +21,7 @@ class CategoryList extends Component {
                         {this.props.list.map( (element, index) => {
                             return (
                                 <tr key={index} >
-                                    <CategoryListItem {...element} updateList={this.props.updateList} />                                
+                                    <CategoryListItem {...element} updatedCategoryList={this.props.updatedCategoryList} />                                
                                 </tr>
                             )
                         })}

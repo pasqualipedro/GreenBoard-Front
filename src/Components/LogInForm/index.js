@@ -1,5 +1,4 @@
 import {React, Component} from 'react';
-import Button from '../Button/index';
 import api from '../../Api/api.config';
 import ButtonLink from '../ButtonLink';
 import styled from 'styled-components'
@@ -62,7 +61,7 @@ class LoginForm extends Component {
             await api.login(this.state);
             this.props.history.push("/dashboard"); //adicionar a rota após o login correto
         } catch (error) {
-            console.log(error);    
+            console.log(error.message);    
         };
     };
 
@@ -71,16 +70,14 @@ class LoginForm extends Component {
             <>
                 <div style={{backgroundColor:'#C1FAE3'}}>
                     <Container>
-                        <form onSubmit = {this.handleSubmit} className= 'd-flex flex-column'>
-                            <label className = 'p-1'><b>Email:</b></label>
-                            <input type = "email" name= "email" value = {this.state.email} onChange = {this.handleInput}/>
+                        <form onSubmit={this.handleSubmit} className= 'd-flex flex-column'>
+                            <label className='p-1'><b>Email:</b></label>
+                              <input type="email" name="email" value = {this.state.email} onChange={this.handleInput}/>
                             <label className = 'p-1'><b>Password:</b></label>
-                            <input type="password" name = "password" value = {this.state.password} onChange = {this.handleInput}/>
+                              <input type="password" name = "password" value={this.state.password} onChange={this.handleInput}/>
+                            <ButtonLink className='text-center' type="submit" text='Enter'/>
                         </form>
                     </Container>
-                    <div className = 'text-center'>
-                        <ButtonLink type ="submit" text = 'Enter'/>
-                    </div>
                 </div>
             </>
         )

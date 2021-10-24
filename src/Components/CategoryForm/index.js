@@ -23,7 +23,7 @@ class CategoryForm extends Component {
     event.preventDefault();
     try {
       await api.categoryCreate(this.state);
-      await this.props.updateList();
+      await this.props.updatedCategoryList();
       this.props.history.push(`/dashboard`);
     } catch (error) {
       console.log(error);
