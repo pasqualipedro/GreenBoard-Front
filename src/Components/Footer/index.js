@@ -65,10 +65,10 @@ class Footer extends Component {
                         <div className=' text-decoration-none mt-3 mb-2 text-center'>
                             <h3 style={{color: '#2c2e72'}} className = 'm-2'>Follow Pedro</h3>
                             <div className = 'mt-4 mb-3 d-flex justify-content-evenly'>
-                                <a style = {{color: '#2c2e72'}} className='text-decoration-none black' href="" rel="noopener noreferrer" target='_blank' ><InstagramIcon fontSize = 'large'/></a>
-                                <a style = {{color: '#2c2e72'}} href="" rel="noopener noreferrer" target='_blank' ><FacebookIcon fontSize = 'large'/></a>
-                                <a style = {{color: '#2c2e72'}} href="" rel="noopener noreferrer" target='_blank' ><LinkedInIcon fontSize = 'large'/></a>
-                                <a style = {{color: '#2c2e72'}} href="" rel="noopener noreferrer" target='_blank' ><GitHubIcon fontSize = 'large'/></a>
+                                <a style = {{color: '#2c2e72'}} className='text-decoration-none black' href="https://www.instagram.com/pedro_adri_pasquali/" rel="noopener noreferrer" target='_blank' ><InstagramIcon fontSize = 'large'/></a>
+                                <a style = {{color: '#2c2e72'}} href="https://www.facebook.com/pedro.adripasquali/" rel="noopener noreferrer" target='_blank' ><FacebookIcon fontSize = 'large'/></a>
+                                <a style = {{color: '#2c2e72'}} href="https://www.linkedin.com/in/pasqualionline/" rel="noopener noreferrer" target='_blank' ><LinkedInIcon fontSize = 'large'/></a>
+                                <a style = {{color: '#2c2e72'}} href="https://github.com/pasqualipedro?tab=repositories" rel="noopener noreferrer" target='_blank' ><GitHubIcon fontSize = 'large'/></a>
                             </div>
                         </div>
                     </footer>

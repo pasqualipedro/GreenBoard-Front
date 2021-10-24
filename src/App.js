@@ -9,6 +9,8 @@ import Dashboard from "./Views/Dashboard";
 import Category from "./Views/Category";
 import Settings from "./Views/Settings";
 import TestPage from "./Views/TestPage";
+import Transaction from "./Views/Transaction";
+
 
 
 /**Global-Style from styled components*/
@@ -25,6 +27,7 @@ function App() {
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/category" component={Category} />
         <Route path="/settings" component={Settings} />
+        <Route path="/transaction" component={Transaction} />
         <Route path="/test" component={TestPage} />
       </Switch>
     </>

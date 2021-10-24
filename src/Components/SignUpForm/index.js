@@ -1,5 +1,4 @@
 import {React, Component} from 'react'
-import Button from '../Button/index'
 import api from '../../Api/api.config'
 import ButtonLink from '../ButtonLink/index'
 import styled from 'styled-components'
@@ -62,7 +61,7 @@ class SignupForm extends Component {
         event.preventDefault();
         try {
             await api.signup(this.state)
-            this.props.history.push("/category/add/");
+            this.props.history.push("/dashboard");
         } catch (error) {
             console.log(error);
         }
@@ -77,22 +76,20 @@ class SignupForm extends Component {
                     <Container>    
                         <form onSubmit = {this.handleSubmit} className = 'd-flex flex-column '>
                             <label className = 'p-1'><b>Name:</b></label>
-                            <input type= "text" name = "name" value = {this.state.name} onChange = {this.handleInput}/>
+                                <input type= "text" name = "name" value = {this.state.name} onChange = {this.handleInput}/>
                             <label className = 'p-1'><b>Lastname:</b></label>
-                            <input type="text" name = "lastname" value = {this.state.lastname} onChange = {this.handleInput}/>
+                                <input type="text" name = "lastname" value = {this.state.lastname} onChange = {this.handleInput}/>
                             <label className = 'p-1'><b>Age:</b></label>
-                            <input type = "number" name = "age" value = {this.state.age} onChange = {this.handleInput}/>
+                                <input type = "number" name = "age" value = {this.state.age} onChange = {this.handleInput}/>
                             <label className = 'p-1'><b>Email:</b></label>
-                            <input type="email" name = "email" value = {this.state.email} onChange = {this.handleInput}/>
+                                <input type="email" name = "email" value = {this.state.email} onChange = {this.handleInput}/>
                             <label className = 'p-1'><b>Password:</b></label>
-                            <input type="password" name = "password" value = {this.state.password} onChange = {this.handleInput}/>
+                                <input type="password" name = "password" value = {this.state.password} onChange = {this.handleInput}/>
                             <label className = 'p-1'><b>Confirm Password:</b></label>
-                            <input type="password" name = "confirmation" value = {this.state.confirmation} onChange = {this.handleInput}/>
+                                <input type="password" name = "confirmation" value = {this.state.confirmation} onChange = {this.handleInput}/>
+                            <ButtonLink className = 'text-center' type="submit" text='Enter'/>
                         </form>
                     </Container>
-                    <div className = 'text-center'>
-                        <ButtonLink type = "submit" text = 'Enter'/>
-                    </div>
                 </div>    
             </>
         )
