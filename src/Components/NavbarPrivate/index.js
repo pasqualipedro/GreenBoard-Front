@@ -3,9 +3,7 @@ import ButtonButton from "../ButtonButton";
 import { useHistory } from 'react-router-dom';
 
 const NavbarPrivate = () => {
-
   const history = useHistory();
-
 
   const logOut = () => {
     localStorage.removeItem(`token`);
