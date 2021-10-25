@@ -16,7 +16,7 @@ render() {
         <ButtonButton text="Transactions" endpoint="/transaction"/>
         <ButtonButton text="DashBoard" endpoint="/dashboard"/>
         <ButtonButton text="Settings" endpoint="/settings"/>
-        <ButtonButton endpoint="/"/ action={this.logOut} >
+        <ButtonButton endpoint="/" action={this.logOut} />
         </>
     )
 }
