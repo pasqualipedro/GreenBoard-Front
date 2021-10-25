@@ -1,26 +1,26 @@
-import React, { Component } from "react";
+import React from "react";
 import ButtonButton from "../ButtonButton";
+import { useHistory } from 'react-router-dom';
+
+const NavbarPrivate = () => {
+
+  const history = useHistory();
 
 
-class NavbarPrivate extends Component {
-
-  logOut = () => {
+  const logOut = () => {
     localStorage.removeItem(`token`);
     history.push('/');
   };
 
-  render() {
-      return (
-          <>
-          <ButtonButton text="Categories" endpoint="/category"/>
-          <ButtonButton text="Transactions" endpoint="/transaction"/>
-          <ButtonButton text="DashBoard" endpoint="/dashboard"/>
-          <ButtonButton text="Settings" endpoint="/settings"/>
-          <ButtonButton action={this.logOut} />
-          </>
-      )
-  }
-
+  return (
+    <>
+    <ButtonButton text="Categories" endpoint="/category"/>
+    <ButtonButton text="Transactions" endpoint="/transaction"/>
+    <ButtonButton text="DashBoard" endpoint="/dashboard"/>
+    <ButtonButton text="Settings" endpoint="/settings"/>
+    <ButtonButton action={logOut} />
+    </>
+  )
 };
 
 export default NavbarPrivate;
