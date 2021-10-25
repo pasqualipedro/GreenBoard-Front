@@ -8,14 +8,7 @@ import SignUp from "./Views/SignUp";
 import Dashboard from "./Views/Dashboard";
 import Category from "./Views/Category";
 import Settings from "./Views/Settings";
-import TestPage from "./Views/TestPage";
 import Transaction from "./Views/Transaction";
-
-
-
-/**Global-Style from styled components*/
-/* import { createGlobalStyle } from "styled-components"; */ /*----> ?? CONFIRMAR SE ESTA CORRETO*/
-
 
 function App() {
   return (
@@ -28,7 +21,6 @@ function App() {
         <Route path="/category" component={Category} />
         <Route path="/settings" component={Settings} />
         <Route path="/transaction" component={Transaction} />
-        <Route path="/test" component={TestPage} />
       </Switch>
     </>
   );

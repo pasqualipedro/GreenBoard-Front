@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import api from "../../Api/api.config"
-import Button from "../Button"
+import ButtonButton from "../ButtonButton"
 
 class TransactionListItem extends Component {
     state = {
@@ -65,13 +65,13 @@ class TransactionListItem extends Component {
                         <td><input type="number" name="value" value={this.state.value} onChange={this.handleInput}/></td>
                         <td><input type="text" name="frequency" value={this.state.frequency} onChange={this.handleInput}/></td>
                         <td>
-                            <Button text="Cancel" action={ () => { 
+                            <ButtonButton text="Cancel" action={ () => { 
                                 this.editToggle();
                                 this.setState({...this.props})
                                 }} />
                         </td>
                         <td>
-                            <Button text="Save" action={ () => this.handleUpdate(this.props._id, this.state) }/>
+                            <ButtonButton text="Save" action={ () => this.handleUpdate(this.props._id, this.state) }/>
                         </td>
                     </>)
                 :  
@@ -86,10 +86,10 @@ class TransactionListItem extends Component {
                         <td>{this.props.value}</td>
                         <td>{this.props.frequency}</td>
                         <td>
-                            <Button text="Delete" action={ () => { this.handleDelete(this.props._id) }} />
+                            <ButtonButton text="Delete" action={ () => { this.handleDelete(this.props._id) }} />
                         </td>
                         <td>
-                            <Button text="Edit" action={this.editToggle}/>
+                            <ButtonButton text="Edit" action={this.editToggle}/>
                         </td>
                     </>)
                 }

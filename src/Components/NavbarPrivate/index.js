@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ButtonLink from "../ButtonLink";
+import ButtonButton from "../ButtonButton";
 
 
 class NavbarPrivate extends Component {
@@ -7,10 +7,10 @@ class NavbarPrivate extends Component {
 render() {
     return (
         <>
-        <ButtonLink text = "Categories" endpoint = "/category"/>
-        <ButtonLink text = "Transactions" endpoint = "/transaction"/>
-        <ButtonLink text = "DashBoard" endpoint = "/dashboard"/>
-        <ButtonLink text = "Settings" endpoint = "/settings"/>
+        <ButtonButton text="Categories" endpoint="/category"/>
+        <ButtonButton text="Transactions" endpoint="/transaction"/>
+        <ButtonButton text="DashBoard" endpoint="/dashboard"/>
+        <ButtonButton text="Settings" endpoint="/settings"/>
         </>
     )
 }

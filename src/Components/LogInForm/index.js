@@ -1,7 +1,7 @@
-import {React, Component} from 'react';
-import api from '../../Api/api.config';
-import ButtonLink from '../ButtonLink';
-import styled from 'styled-components'
+import { React, Component } from "react";
+import api from "../../Api/api.config";
+import ButtonButton from "../ButtonButton";
+import styled from "styled-components";
 
 const Container = styled.div`
     {props.className};
@@ -24,6 +24,7 @@ const Container = styled.div`
         font-size: 16px
         }
     }
+    
     @media only screen and (min-width: 550px) and (max-width: 720px) {
         footer{
         margin-top: 20px;
@@ -39,49 +40,63 @@ const Container = styled.div`
             font-size: 19px
         }
     }
-`
+`;
+
 
 class LoginForm extends Component {
+  state = {
+    email: ``,
+    password: ``,
+  };
 
-    state = {
-        email:``,
-        password:``
+  handleInput = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await api.login(this.state);
+      this.props.history.push("/dashboard"); //adicionar a rota após o login correto
+    } catch (error) {
+      console.log(error.message);
     }
+  };
 
-    handleInput = (event) => {
-        const {name, value} = event.target;
-        this.setState({
-            [name]: value
-        });
-    };
-
-    handleSubmit = async (event) => {
-        event.preventDefault();
-        try {
-            await api.login(this.state);
-            this.props.history.push("/dashboard"); //adicionar a rota após o login correto
-        } catch (error) {
-            console.log(error.message);    
-        };
-    };
-
-    render(){
-        return(
-            <>
-                <div style={{backgroundColor:'#C1FAE3'}}>
-                    <Container>
-                        <form onSubmit={this.handleSubmit} className= 'd-flex flex-column'>
-                            <label className='p-1'><b>Email:</b></label>
-                              <input type="email" name="email" value = {this.state.email} onChange={this.handleInput}/>
-                            <label className = 'p-1'><b>Password:</b></label>
-                              <input type="password" name = "password" value={this.state.password} onChange={this.handleInput}/>
-                            <ButtonLink className='text-center' type="submit" text='Enter'/>
-                        </form>
-                    </Container>
-                </div>
-            </>
-        )
-    }
+  render() {
+    return (
+      <>
+        <div style={{ backgroundColor: "#C1FAE3" }}>
+          <Container>
+            <form onSubmit={this.handleSubmit} className="d-flex flex-column">
+              <label className="p-1">
+                <b>Email:</b>
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleInput}
+              />
+              <label className="p-1">
+                <b>Password:</b>
+              </label>
+              <input
+                type="password"
+                name="password"
+                value={this.state.password}
+                onChange={this.handleInput}
+              />
+              <ButtonButton className="text-center" type="submit" text="Enter" endpoint="/dashboard" />
+            </form>
+          </Container>
+        </div>
+      </>
+    );
+  }
 }
 
-export default LoginForm
+export default LoginForm;

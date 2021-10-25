@@ -1,6 +1,6 @@
 import {React, Component} from 'react'
 import api from '../../Api/api.config'
-import ButtonLink from '../ButtonLink/index'
+import ButtonButton from '../ButtonButton'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -75,19 +75,19 @@ class SignupForm extends Component {
                 <div style = {{backgroundColor:'#C1FAE3'}}>
                     <Container>    
                         <form onSubmit = {this.handleSubmit} className = 'd-flex flex-column '>
-                            <label className = 'p-1'><b>Name:</b></label>
-                                <input type= "text" name = "name" value = {this.state.name} onChange = {this.handleInput}/>
-                            <label className = 'p-1'><b>Lastname:</b></label>
-                                <input type="text" name = "lastname" value = {this.state.lastname} onChange = {this.handleInput}/>
-                            <label className = 'p-1'><b>Age:</b></label>
-                                <input type = "number" name = "age" value = {this.state.age} onChange = {this.handleInput}/>
-                            <label className = 'p-1'><b>Email:</b></label>
-                                <input type="email" name = "email" value = {this.state.email} onChange = {this.handleInput}/>
-                            <label className = 'p-1'><b>Password:</b></label>
-                                <input type="password" name = "password" value = {this.state.password} onChange = {this.handleInput}/>
-                            <label className = 'p-1'><b>Confirm Password:</b></label>
-                                <input type="password" name = "confirmation" value = {this.state.confirmation} onChange = {this.handleInput}/>
-                            <ButtonLink className = 'text-center' type="submit" text='Enter'/>
+                            <label className='p-1'><b>Name:</b></label>
+                                <input type= "text" name="name" value={this.state.name} onChange={this.handleInput}/>
+                            <label className='p-1'><b>Lastname:</b></label>
+                                <input type="text" name="lastname" value={this.state.lastname} onChange={this.handleInput}/>
+                            <label className='p-1'><b>Age:</b></label>
+                                <input type = "number" name="age" value={this.state.age} onChange={this.handleInput}/>
+                            <label className='p-1'><b>Email:</b></label>
+                                <input type="email" name="email" value={this.state.email} onChange={this.handleInput}/>
+                            <label className='p-1'><b>Password:</b></label>
+                                <input type="password" name="password" value={this.state.password} onChange={this.handleInput}/>
+                            <label className='p-1'><b>Confirm Password:</b></label>
+                                <input type="password" name="confirmation" value={this.state.confirmation} onChange={this.handleInput}/>
+                            <ButtonButton className='text-center' type="submit" text='Enter'/>
                         </form>
                     </Container>
                 </div>    

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CategoryForm from '../Components/CategoryForm';
 import CategoryList from '../Components/CategoryList';
 import api from '../Api/api.config';
-import ButtonLink from '../Components/ButtonLink';
+import ButtonButton from '../Components/ButtonButton';
 import NavbarPrivate from '../Components/NavbarPrivate';
 import NavbarPublic from '../Components/NavbarPublic';
 
@@ -47,7 +47,7 @@ class Category extends Component {
                 { this.state.loading? <h3>Loading</h3> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
                 <CategoryList {...this.state} updatedCategoryList={ this.getAllCategories } />
                 }
-                <ButtonLink text = "Enter" endpoint="/dashboard"/>
+                <ButtonButton text="Enter" endpoint="/dashboard"/>
             </>
         );
     };

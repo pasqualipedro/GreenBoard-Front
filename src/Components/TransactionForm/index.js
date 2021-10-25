@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "../Button";
+import ButtonButton from "../ButtonButton";
 import api from "../../Api/api.config";
 
 class TransactionForm extends Component {
@@ -92,7 +92,7 @@ class TransactionForm extends Component {
             value={this.state.frequency}
             onChange={this.handleInput}
           />
-          <Button type="submit" text="Add" />
+          <ButtonButton type="submit" text="Add" />
         </form>
       </div>
     );

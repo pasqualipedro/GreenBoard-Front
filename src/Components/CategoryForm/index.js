@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "../Button";
+import ButtonButton from "../ButtonButton";
 import api from "../../Api/api.config";
 
 class CategoryForm extends Component {
@@ -76,7 +76,7 @@ class CategoryForm extends Component {
                 value={this.state.inUse}
                 onChange={this.handleInput}
                 /> */}
-            <Button type="submit" text="Add" />
+            <ButtonButton type="submit" text="Add" />
         </form>
       </div>
     );
