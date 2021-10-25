@@ -4,6 +4,11 @@ import ButtonButton from "../ButtonButton";
 
 class NavbarPrivate extends Component {
 
+    const logOut = () => {
+        localStorage.removeItem(`token`);
+        history.push('/login');
+    }
+
 render() {
     return (
         <>
@@ -11,6 +16,7 @@ render() {
         <ButtonButton text="Transactions" endpoint="/transaction"/>
         <ButtonButton text="DashBoard" endpoint="/dashboard"/>
         <ButtonButton text="Settings" endpoint="/settings"/>
+        <ButtonButton endpoint="/"/ action={this.logOut} >
         </>
     )
 }

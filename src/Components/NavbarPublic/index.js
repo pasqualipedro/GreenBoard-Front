@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(10),
     display: "flex",
   },
- logo: {
+  logo: {
     flexGrow: "1",
     cursor: "pointer",
   },
@@ -23,8 +23,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 const NavbarPublic = () =>  {
-    const classes = useStyles();
+  const classes = useStyles();
+
     return (
         <AppBar position="static">
             <CssBaseline/>
