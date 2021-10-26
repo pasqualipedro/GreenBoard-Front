@@ -16,7 +16,7 @@ const NavbarPrivate = () => {
     <ButtonButton text="Transactions" endpoint="/transaction"/>
     <ButtonButton text="DashBoard" endpoint="/dashboard"/>
     <ButtonButton text="Settings" endpoint="/settings"/>
-    <ButtonButton action={logOut} />
+    <ButtonButton text="Logout" action={logOut} />
     </>
   )
 };
