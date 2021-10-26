@@ -8,7 +8,6 @@ class TransactionListItem extends Component {
         endDate: this.props.description,
         type: this.props.type,
         description: this.props.description,
-        label: this.props.label,
         category: this.props.category,
         value: this.props.value,
         frequency: this.props.frequency,
@@ -60,7 +59,6 @@ class TransactionListItem extends Component {
                         <td><input type="date" name="endDate" value={this.state.endDate} onChange={this.handleInput}/></td>
                         <td><input type="text" name="type" value={this.state.type} onChange={this.handleInput}/></td>
                         <td><input type="text" name="description" value={this.state.description} onChange={this.handleInput}/></td>
-                        <td><input type="text" name="label" value={this.state.label} onChange={this.handleInput}/></td>
                         <td><input type="text" name="category" value={this.state.category} onChange={this.handleInput}/></td>
                         <td><input type="number" name="value" value={this.state.value} onChange={this.handleInput}/></td>
                         <td><input type="text" name="frequency" value={this.state.frequency} onChange={this.handleInput}/></td>
@@ -81,7 +79,6 @@ class TransactionListItem extends Component {
                         <td>{this.props.endDate}</td>
                         <td>{this.props.type}</td>
                         <td>{this.props.description}</td>
-                        <td>{this.props.label}</td>
                         <td>{this.props.category}</td>
                         <td>{this.props.value}</td>
                         <td>{this.props.frequency}</td>

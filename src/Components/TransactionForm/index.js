@@ -8,7 +8,6 @@ class TransactionForm extends Component {
     endDate: "",
     type: "",
     description: "",
-    label: "",
     category: "",
     value: "",
     frequency: "",
@@ -62,13 +61,6 @@ class TransactionForm extends Component {
             type="text"
             name="description"
             value={this.state.description}
-            onChange={this.handleInput}
-          />
-          <label>Label:</label>
-          <input
-            type="text"
-            name="label"
-            value={this.state.label}
             onChange={this.handleInput}
           />
           <label>Category:</label>

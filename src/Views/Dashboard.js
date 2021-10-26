@@ -12,47 +12,83 @@ class DashBoard extends Component {
           <table className="table table-striped table-bordered">
             <thead>
               <tr>
-                <th scope="col">Income Transactions</th>
+                <th scope="col">Total Balance</th>
+                <td colspan="4">January</td>
+                <td colspan="4">February</td>
+                <td colspan="4">March</td>
+                <td colspan="4">April</td>
+                <td colspan="4">May</td>
+                <td colspan="4">June</td>
+                <td colspan="4">July</td>
+                <td colspan="4">August</td>
+                <td colspan="4">September</td>
+                <td colspan="4">October</td>
+                <td colspan="4">November</td>
+                <td colspan="4">December</td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th>Category A</th>
-                <td colspan="4">category description</td>
+                <th>Income</th>
+                <td colspan="4">January</td>
+                <td colspan="4">February</td>
+                <td colspan="4">March</td>
+                <td colspan="4">April</td>
+                <td colspan="4">May</td>
+                <td colspan="4">June</td>
+                <td colspan="4">July</td>
+                <td colspan="4">August</td>
+                <td colspan="4">September</td>
+                <td colspan="4">October</td>
+                <td colspan="4">November</td>
+                <td colspan="4">December</td>
               </tr>
               <tr>
-                <td colspan="4">
-                  <table className="table mb-0 table-hover table-sm align-middle">
-                    <thead>
-                      <th scope="col">name</th>
-                      <th scope="col">value</th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">Group AA</th>
-                        <td colspan="4">100</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Group BB</th>
-                        <td colspan="4">125</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Group CC</th>
-                        <td colspan="4">25</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
+                <th>Savings</th>
+                <td colspan="4">January</td>
+                <td colspan="4">February</td>
+                <td colspan="4">March</td>
+                <td colspan="4">April</td>
+                <td colspan="4">May</td>
+                <td colspan="4">June</td>
+                <td colspan="4">July</td>
+                <td colspan="4">August</td>
+                <td colspan="4">September</td>
+                <td colspan="4">October</td>
+                <td colspan="4">November</td>
+                <td colspan="4">December</td>
               </tr>
               <tr>
-                <th scope="row">SUB TOTAL</th>
-                <td>250</td>
+                <th>Expenditure</th>
+                <td colspan="4">January</td>
+                <td colspan="4">February</td>
+                <td colspan="4">March</td>
+                <td colspan="4">April</td>
+                <td colspan="4">May</td>
+                <td colspan="4">June</td>
+                <td colspan="4">July</td>
+                <td colspan="4">August</td>
+                <td colspan="4">September</td>
+                <td colspan="4">October</td>
+                <td colspan="4">November</td>
+                <td colspan="4">December</td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
                 <th scope="row">TOTAL TOTAL</th>
-                <td>250!!</td>
+                <td colspan="4">January</td>
+                <td colspan="4">February</td>
+                <td colspan="4">March</td>
+                <td colspan="4">April</td>
+                <td colspan="4">May</td>
+                <td colspan="4">June</td>
+                <td colspan="4">July</td>
+                <td colspan="4">August</td>
+                <td colspan="4">September</td>
+                <td colspan="4">October</td>
+                <td colspan="4">November</td>
+                <td colspan="4">December</td>
               </tr>
             </tfoot>
           </table>
@@ -68,7 +104,7 @@ class DashBoard extends Component {
                 aria-expanded="true"
                 aria-controls="panelsStayOpen-collapseOne"
               >
-                Accordion Item #1
+                EXPENDITURES
               </button>
             </h2>
             <div
@@ -76,7 +112,207 @@ class DashBoard extends Component {
               className="accordion-collapse collapse show"
               aria-labelledby="panelsStayOpen-headingOne"
             >
-            <div class="table-responsive accordion-body">
+              <div class="table-responsive accordion-body">
+                <table className="table table-striped table-bordered">
+                  {/* <thead>
+                    <tr>
+                      <th scope="col">Income Transactions</th>
+                      <td colspan="4">January</td>
+                      <td colspan="4">February</td>
+                      <td colspan="4">March</td>
+                      <td colspan="4">April</td>
+                      <td colspan="4">May</td>
+                      <td colspan="4">June</td>
+                      <td colspan="4">July</td>
+                      <td colspan="4">August</td>
+                      <td colspan="4">September</td>
+                      <td colspan="4">October</td>
+                      <td colspan="4">November</td>
+                      <td colspan="4">December</td>
+                    </tr>
+                  </thead> */}
+                  <tbody>
+                    <tr>
+                      <th>CASA</th>
+                    </tr>
+                    <tr>
+                      <td colspan="4">
+                        <table className="table mb-0 table-hover table-sm align-middle">
+                          <thead>
+                            <th scope="col">fixos</th>
+                            <th scope="col">value</th>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">agua</th>
+                              <td colspan="4">January</td>
+                              <td colspan="4">February</td>
+                              <td colspan="4">March</td>
+                              <td colspan="4">April</td>
+                              <td colspan="4">May</td>
+                              <td colspan="4">June</td>
+                              <td colspan="4">July</td>
+                              <td colspan="4">August</td>
+                              <td colspan="4">September</td>
+                              <td colspan="4">October</td>
+                              <td colspan="4">November</td>
+                              <td colspan="4">December</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">luz</th>
+                              <td colspan="4">January</td>
+                              <td colspan="4">February</td>
+                              <td colspan="4">March</td>
+                              <td colspan="4">April</td>
+                              <td colspan="4">May</td>
+                              <td colspan="4">June</td>
+                              <td colspan="4">July</td>
+                              <td colspan="4">August</td>
+                              <td colspan="4">September</td>
+                              <td colspan="4">October</td>
+                              <td colspan="4">November</td>
+                              <td colspan="4">December</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">gas</th>
+                              <td colspan="4">January</td>
+                              <td colspan="4">February</td>
+                              <td colspan="4">March</td>
+                              <td colspan="4">April</td>
+                              <td colspan="4">May</td>
+                              <td colspan="4">June</td>
+                              <td colspan="4">July</td>
+                              <td colspan="4">August</td>
+                              <td colspan="4">September</td>
+                              <td colspan="4">October</td>
+                              <td colspan="4">November</td>
+                              <td colspan="4">December</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">SUB TOTAL</th>
+                      <td>250</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <th>CARRO</th>
+                    </tr>
+                    <tr>
+                      <td colspan="4">
+                        <table className="table mb-0 table-hover table-sm align-middle">
+                          <thead>
+                            <th scope="col">fixos</th>
+                            <th scope="col">value</th>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">IPVA</th>
+                              <td colspan="4">January</td>
+                              <td colspan="4">February</td>
+                              <td colspan="4">March</td>
+                              <td colspan="4">April</td>
+                              <td colspan="4">May</td>
+                              <td colspan="4">June</td>
+                              <td colspan="4">July</td>
+                              <td colspan="4">August</td>
+                              <td colspan="4">September</td>
+                              <td colspan="4">October</td>
+                              <td colspan="4">November</td>
+                              <td colspan="4">December</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">revisoes + manut</th>
+                              <td colspan="4">January</td>
+                              <td colspan="4">February</td>
+                              <td colspan="4">March</td>
+                              <td colspan="4">April</td>
+                              <td colspan="4">May</td>
+                              <td colspan="4">June</td>
+                              <td colspan="4">July</td>
+                              <td colspan="4">August</td>
+                              <td colspan="4">September</td>
+                              <td colspan="4">October</td>
+                              <td colspan="4">November</td>
+                              <td colspan="4">December</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">gas</th>
+                              <td colspan="4">January</td>
+                              <td colspan="4">February</td>
+                              <td colspan="4">March</td>
+                              <td colspan="4">April</td>
+                              <td colspan="4">May</td>
+                              <td colspan="4">June</td>
+                              <td colspan="4">July</td>
+                              <td colspan="4">August</td>
+                              <td colspan="4">September</td>
+                              <td colspan="4">October</td>
+                              <td colspan="4">November</td>
+                              <td colspan="4">December</td>
+                            </tr>
+                          </tbody>
+                          <thead>
+                            <th scope="col">nao-fixos</th>
+                            <th scope="col">value</th>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">extras</th>
+                              <td colspan="4">January</td>
+                              <td colspan="4">February</td>
+                              <td colspan="4">March</td>
+                              <td colspan="4">April</td>
+                              <td colspan="4">May</td>
+                              <td colspan="4">June</td>
+                              <td colspan="4">July</td>
+                              <td colspan="4">August</td>
+                              <td colspan="4">September</td>
+                              <td colspan="4">October</td>
+                              <td colspan="4">November</td>
+                              <td colspan="4">December</td>
+                            </tr>
+                          </tbody>  
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">SUB TOTAL</th>
+                      <td>250</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="row">TOTAL TOTAL</th>
+                      <td>250!!</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTwo"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseTwo"
+              >
+                SAVINGS
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseTwo"
+              className="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingTwo"
+            >
+              <div class="table-responsive accordion-body">
               <table className="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -124,37 +360,6 @@ class DashBoard extends Component {
                   </tr>
                 </tfoot>
               </table>
-            </div>
-            </div>
-          </div>
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseTwo"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseTwo"
-              >
-                Accordion Item #2
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseTwo"
-              className="accordion-collapse collapse"
-              aria-labelledby="panelsStayOpen-headingTwo"
-            >
-              <div className="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classNamees that we use to style each element. These
-                classNamees control the overall appearance, as well as the
-                showing and hiding via CSS transitions. You can modify any of
-                this with custom CSS or overriding our default variables. It's
-                also worth noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
               </div>
             </div>
           </div>
@@ -168,7 +373,7 @@ class DashBoard extends Component {
                 aria-expanded="false"
                 aria-controls="panelsStayOpen-collapseThree"
               >
-                Accordion Item #3
+                INCOMES
               </button>
             </h2>
             <div
@@ -176,16 +381,54 @@ class DashBoard extends Component {
               className="accordion-collapse collapse"
               aria-labelledby="panelsStayOpen-headingThree"
             >
-              <div className="accordion-body">
-                <strong>This is the third item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classNamees that we use to style each element. These
-                classNamees control the overall appearance, as well as the
-                showing and hiding via CSS transitions. You can modify any of
-                this with custom CSS or overriding our default variables. It's
-                also worth noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+              <div class="table-responsive accordion-body">
+              <table className="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Income Transactions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Category A</th>
+                    <td colspan="4">category description</td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">
+                      <table className="table mb-0 table-hover table-sm align-middle">
+                        <thead>
+                          <th scope="col">name</th>
+                          <th scope="col">value</th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Group AA</th>
+                            <td colspan="4">100</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Group BB</th>
+                            <td colspan="4">125</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Group CC</th>
+                            <td colspan="4">25</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SUB TOTAL</th>
+                    <td>250</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="row">TOTAL TOTAL</th>
+                    <td>250!!</td>
+                  </tr>
+                </tfoot>
+              </table>
               </div>
             </div>
           </div>

@@ -14,7 +14,6 @@ class TransactionList extends Component {
                             <th>End Date</th>
                             <th>Type</th>
                             <th>Description</th>
-                            <th>Label</th>
                             <th>Category</th>
                             <th>Value</th>
                             <th>Frequency</th>
