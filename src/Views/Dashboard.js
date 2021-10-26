@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NavbarPublic from "../Components/NavbarPublic";
 import NavbarPrivate from "../Components/NavbarPrivate";
 
-class DashBoard extends Component() {
+class DashBoard extends Component {
   render() {
     return (
       <>
