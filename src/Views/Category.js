@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import CategoryForm from '../Components/CategoryForm';
 import CategoryList from '../Components/CategoryList';
 import api from '../Api/api.config';
-import ButtonButton from '../Components/ButtonButton';
 import NavbarPrivate from '../Components/NavbarPrivate';
 import NavbarPublic from '../Components/NavbarPublic';
 
@@ -40,14 +39,12 @@ class Category extends Component {
     render(){
         return (
             <>  
-                <h1>Category!!!</h1>
                 <NavbarPublic/>
                 <NavbarPrivate/>
-                <CategoryForm updatedCategoryList={this.getAllCategories}/>
-                { this.state.loading? <h3>Loading</h3> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
+                <CategoryForm updatedCategoryList={this.getAllCategories} history={this.props.history} />
+                { this.state.loading ? <h3>Loading</h3> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
                 <CategoryList {...this.state} updatedCategoryList={ this.getAllCategories } />
                 }
-                <ButtonButton text="Enter" endpoint="/dashboard"/>
             </>
         );
     };

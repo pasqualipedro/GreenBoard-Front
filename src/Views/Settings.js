@@ -1,14 +1,15 @@
 import React from 'react';
 import ButtonButton from '../Components/ButtonButton';
 import NavbarPublic from '../Components/NavbarPublic';
+import NavbarPrivate from '../Components/NavbarPrivate';
 import Footer from '../Components/Footer'
 
 const Settings = (props) => {
     return (
         <>  
             <NavbarPublic/>
-            <h1>Settings Page</h1>
-            <ButtonButton text="Back to Dashboard" endpoint="/dashboard"/>
+            <NavbarPrivate />
+            <ButtonButton text="Update my Info"/>
             <Footer/>
         </>
     )

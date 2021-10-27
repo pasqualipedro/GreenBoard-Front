@@ -12,7 +12,7 @@ import Transaction from "./Views/Transaction";
 
 function App() {
   return (
-    <>
+    
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" render = {(props) => <LogIn {...props} /> }/>
@@ -22,7 +22,7 @@ function App() {
         <Route path="/settings" component={Settings} />
         <Route path="/transaction" component={Transaction} />
       </Switch>
-    </>
+    
   );
 }
 

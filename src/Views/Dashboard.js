@@ -3,6 +3,8 @@ import NavbarPublic from "../Components/NavbarPublic";
 import NavbarPrivate from "../Components/NavbarPrivate";
 
 class DashBoard extends Component {
+
+
   render() {
     return (
       <>

@@ -25,16 +25,16 @@ class TransactionForm extends Component {
     try {
       await api.transactionCreate(this.state);
       await this.props.updatedTransactionList();
-      this.props.history.push("/dashboard");
     } catch (error) {
       console.log(error);
     }
   };
 
+
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} id="transaction_form">
           <label>Start Date:</label>
           <input
             type="Date"
@@ -49,13 +49,17 @@ class TransactionForm extends Component {
             value={this.state.endDate}
             onChange={this.handleInput}
           />
-          <label>Type:</label>
-          <input
-            type="text"
-            name="type"
-            value={this.state.type}
-            onChange={this.handleInput}
-          />
+          <label htmlFor="types">Choose category type:</label>
+            <select
+              id="types"
+              name="type"
+              form="transaction_form"
+              onChange={this.handleInput}
+              >
+                <option disabled selected ></option>
+                <option value="Income">Income</option>
+                <option value="Expenditure">Expenditure</option>
+            </select>
           <label>Description:</label>
           <input
             type="text"
@@ -77,13 +81,27 @@ class TransactionForm extends Component {
             value={this.state.value}
             onChange={this.handleInput}
           />
-          <label>Frequency:</label>
-          <input
-            type="text"
-            name="frequency"
-            value={this.state.frequency}
-            onChange={this.handleInput}
-          />
+          <label htmlFor="types">Frequency:</label>
+            <select
+              id="frequencies"
+              name="frequency"
+              form="transaction_form"
+              onChange={this.handleInput}
+              >
+                <option disabled selected ></option>
+                <option value="Income">Single Time</option>
+                <option value="Expenditure">Installment</option>
+                <option value="Expenditure">Daily</option>
+                <option value="Expenditure">Weekly</option>
+                <option value="Expenditure">Monthly</option>
+                <option value="Expenditure">Year</option>
+                <option value="Expenditure">Weekdays</option>
+                <option value="Expenditure">Weekends</option>
+                <option value="Expenditure">By 2 Months</option>
+                <option value="Expenditure">By 3 Months</option>
+                <option value="Expenditure">By 4 Months</option>
+                <option value="Expenditure">By 6 Months</option>
+            </select>
           <ButtonButton type="submit" text="Add" />
         </form>
       </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonLink from "../ButtonLink";
 import ButtonButton from "../ButtonButton";
 import { useHistory } from 'react-router-dom';
 
@@ -12,10 +13,10 @@ const NavbarPrivate = () => {
 
   return (
     <>
-    <ButtonButton text="Categories" endpoint="/category"/>
-    <ButtonButton text="Transactions" endpoint="/transaction"/>
-    <ButtonButton text="DashBoard" endpoint="/dashboard"/>
-    <ButtonButton text="Settings" endpoint="/settings"/>
+    <ButtonLink text="Categories" endpoint="/category"/>
+    <ButtonLink text="Transactions" endpoint="/transaction"/>
+    <ButtonLink text="DashBoard" endpoint="/dashboard"/>
+    <ButtonLink text="Settings" endpoint="/settings"/>
     <ButtonButton text="Logout" action={logOut} />
     </>
   )

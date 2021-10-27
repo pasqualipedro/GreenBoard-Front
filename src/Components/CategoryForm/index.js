@@ -24,7 +24,6 @@ class CategoryForm extends Component {
     try {
       await api.categoryCreate(this.state);
       await this.props.updatedCategoryList();
-      this.props.history.push(`/dashboard`);
     } catch (error) {
       console.log(error);
     }
@@ -33,7 +32,7 @@ class CategoryForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} id="category_form">
             <label>Name:</label>
                 <input
                 type="text"
@@ -48,13 +47,24 @@ class CategoryForm extends Component {
                 value={this.state.description}
                 onChange={this.handleInput}
                 />
-            <label>Type:</label>
+            {/* <label>Type:</label>
                 <input
                 type="text"
                 name="type"
                 value={this.state.type}
                 onChange={this.handleInput}
-                />
+                /> */}
+            <label htmlFor="types">Choose category type:</label>
+              <select
+                id="types"
+                name="type"
+                form="category_form"
+                onChange={this.handleInput}
+                >
+                  <option disabled selected ></option>
+                  <option value="Income">Income</option>
+                  <option value="Expenditure">Expenditure</option>
+              </select>    
             <label>Label:</label>
                 <input
                 type="text"
@@ -69,13 +79,6 @@ class CategoryForm extends Component {
                 value={this.state.budget}
                 onChange={this.handleInput}
                 />
-            {/* <label>In use?:</label>
-                <input
-                type="number"
-                name="inUse"
-                value={this.state.inUse}
-                onChange={this.handleInput}
-                /> */}
             <ButtonButton type="submit" text="Add" />
         </form>
       </div>

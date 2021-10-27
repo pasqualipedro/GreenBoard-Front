@@ -42,7 +42,6 @@ const Container = styled.div`
     }
 `;
 
-
 class LoginForm extends Component {
   state = {
     email: ``,
