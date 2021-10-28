@@ -10,15 +10,15 @@ class CategoryList extends Component {
                 <table>
                     <thead>
                         <tr>
-                            <th>Name</th>
                             <th>Description</th>
                             <th>Type</th>
-                            <th>Label</th>
+                            <th>Category Name</th>
+                            <th>Item</th>
                             <th>Budget</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.list.map( (element, index) => {
+                        {this.props.categoryList.map( (element, index) => {
                             return (
                                 <tr key={index} >
                                     <CategoryListItem {...element} updatedCategoryList={this.props.updatedCategoryList} />                                

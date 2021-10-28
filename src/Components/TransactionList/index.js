@@ -20,7 +20,7 @@ class TransactionList extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.list.map( (element, index) => {
+                        {this.props.transactionList.map( (element, index) => {
                             return (
                                 <tr key={index} >
                                     <TransactionListItem {...element} updatedTransactionList={this.props.updatedTransactionList} />                                

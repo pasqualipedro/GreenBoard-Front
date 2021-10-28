@@ -9,7 +9,8 @@ import NavbarPublic from '../Components/NavbarPublic';
 class Transaction extends Component {
     state = {
         loading: false,
-        list: []
+        transactionList: [],
+        categoryNameList: []
     };
     
     getAllTransactions = async () => {
@@ -19,7 +20,7 @@ class Transaction extends Component {
         try {
             const allTransactions = await api.transactionFetchAll();
             this.setState({
-                list: allTransactions
+                transactionList: allTransactions
             });
         } catch (error) {
             console.log(error, `Unable to fetch all transactions`);
@@ -31,11 +32,31 @@ class Transaction extends Component {
         
     };
 
-    componentDidMount(){
-        this.getAllTransactions();
-        console.log(this.getAllTransactions);
+    getAllCategories = async () => {
+        this.setState({
+            loading: true
+        });
+        try {
+            const allCategories = await api.categoryFetchAll();
+            this.setState({
+                categoryNameList: allCategories
+            });
+        } catch (error) {
+            console.log(error, `Unable to fetch all categories`);
+        } finally {
+            this.setState({
+                loading: false
+            });
+        }
     };
 
+    
+    componentDidMount() {
+        this.getAllTransactions();
+        this.getAllCategories();
+    };
+
+    
 
     render(){
         return (

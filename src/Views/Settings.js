@@ -4,6 +4,7 @@ import NavbarPublic from '../Components/NavbarPublic';
 import NavbarPrivate from '../Components/NavbarPrivate';
 import Footer from '../Components/Footer'
 
+
 const Settings = (props) => {
     return (
         <>  

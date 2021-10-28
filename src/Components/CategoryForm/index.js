@@ -4,10 +4,10 @@ import api from "../../Api/api.config";
 
 class CategoryForm extends Component {
   state = {
-    name: "",
+    item: "",
     description: "",
     type: "",
-    label: "",
+    categoryName: "",
     inUse: "",
     budget: "",
   };
@@ -33,13 +33,6 @@ class CategoryForm extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit} id="category_form">
-            <label>Name:</label>
-                <input
-                type="text"
-                name="name"
-                value={this.state.name}
-                onChange={this.handleInput}
-                />
             <label>Description:</label>
                 <input
                 type="text"
@@ -47,13 +40,6 @@ class CategoryForm extends Component {
                 value={this.state.description}
                 onChange={this.handleInput}
                 />
-            {/* <label>Type:</label>
-                <input
-                type="text"
-                name="type"
-                value={this.state.type}
-                onChange={this.handleInput}
-                /> */}
             <label htmlFor="types">Choose category type:</label>
               <select
                 id="types"
@@ -64,12 +50,20 @@ class CategoryForm extends Component {
                   <option disabled selected ></option>
                   <option value="Income">Income</option>
                   <option value="Expenditure">Expenditure</option>
+                  <option value="Savings">Savings</option>
               </select>    
-            <label>Label:</label>
+            <label>Category Name:</label>
                 <input
                 type="text"
-                name="label"
-                value={this.state.label}
+                name="categoryName"
+                value={this.state.categoryName}
+                onChange={this.handleInput}
+                />
+            <label>item:</label>
+                <input
+                type="text"
+                name="item"
+                value={this.state.item}
                 onChange={this.handleInput}
                 />
             <label>Budget:</label>

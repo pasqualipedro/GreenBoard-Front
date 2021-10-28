@@ -4,10 +4,10 @@ import ButtonButton from "../ButtonButton"
 
 class CategoryListItem extends Component {
     state = {
-        name: this.props.name,
+        item: this.props.item,
         description: this.props.description,
         type: this.props.type,
-        label: this.props.label,
+        categoryName: this.props.categoryName,
         budget: this.props.budget,
         edit: false
     };
@@ -15,7 +15,7 @@ class CategoryListItem extends Component {
     handleDelete = async (id) => {
         try {
             await api.categoryDelete(id);
-            this.props.updateList();
+            this.props.updatedCategoryList();
         } catch (error) {
             console.log(error)
         };
@@ -25,6 +25,7 @@ class CategoryListItem extends Component {
         this.setState({
             edit: !this.state.edit
         });
+        console.log(this.state.type)
     }; 
 
     handleInput = (event) => {
@@ -39,7 +40,7 @@ class CategoryListItem extends Component {
         try {
             await api.categoryUpdate(id, payload);
             this.editToggle();
-            this.props.updateList();
+            this.props.updatedCategoryList();
         } catch (error) {
             console.log(error)
         };
@@ -52,11 +53,21 @@ class CategoryListItem extends Component {
                 {this.state.edit ? 
                     (<>
                         {/**IF TRUE*/}
-                        <td><input type="text" name="name" value={this.state.name} onChange={this.handleInput}/></td>
                         <td><input type="text" name="description" value={this.state.description} onChange={this.handleInput}/></td>
-                        
-                        <td><input type="text" name="type" value={this.state.type} onChange={this.handleInput}/></td> {/** CONFIRMAR TAG "SELECT" */}
-                        <td><input type="text" name="label" value={this.state.label} onChange={this.handleInput}/></td>
+                        <td><label htmlFor="types">Choose category type:</label>
+                            <select
+                                id="types"
+                                name="type"
+                                onChange={this.handleInput}
+                                value={this.state.type}
+                                >
+                                <option disabled selected ></option>
+                                <option value="Income">Income</option>
+                                <option value="Expenditure">Expenditure</option>
+                            </select>
+                        </td>    
+                        <td><input type="text" name="categoryName" value={this.state.categoryName} onChange={this.handleInput}/></td>
+                        <td><input type="text" name="item" value={this.state.item} onChange={this.handleInput}/></td>
                         <td><input type="number" name="budget" value={this.state.budget} onChange={this.handleInput}/></td>
                         <td>
                             <ButtonButton text="Cancel" action={ () => { 
@@ -71,10 +82,10 @@ class CategoryListItem extends Component {
                 :  
                     (<>
                         {/**IF FALSE */}
-                        <td>{this.props.name}</td>
                         <td>{this.props.description}</td>
                         <td>{this.props.type}</td>
-                        <td>{this.props.label}</td>
+                        <td>{this.props.categoryName}</td>
+                        <td>{this.props.item}</td>
                         <td>{this.props.budget}</td>
                         <td>
                             <ButtonButton text="Delete" action={ () => { this.handleDelete(this.props._id) }} />

@@ -9,7 +9,7 @@ import NavbarPublic from '../Components/NavbarPublic';
 class Category extends Component {
     state = {
         loading: false,
-        list: []
+        categoryList: []
     };
     
     getAllCategories = async () => {
@@ -19,7 +19,7 @@ class Category extends Component {
         try {
             const allCategories = await api.categoryFetchAll();
             this.setState({
-                list: allCategories
+                categoryList: allCategories
             });
         } catch (error) {
             console.log(error, `Unable to fetch all categories`);
@@ -28,7 +28,6 @@ class Category extends Component {
                 loading: false
             });
         }
-        
     };
 
     componentDidMount(){
