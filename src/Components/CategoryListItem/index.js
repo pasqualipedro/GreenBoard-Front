@@ -25,7 +25,6 @@ class CategoryListItem extends Component {
         this.setState({
             edit: !this.state.edit
         });
-        console.log(this.state.type)
     }; 
 
     handleInput = (event) => {

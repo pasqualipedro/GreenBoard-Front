@@ -25,7 +25,7 @@ class ExpenditureTable extends Component {
               className="accordion-collapse collapse show"
               aria-labelledby="panelsStayOpen-headingOne"
             >
-              <div class="table-responsive accordion-body">
+              <div className="table-responsive accordion-body">
                 <table className="table table-striped table-bordered">
                   <tbody>
                     <tr>

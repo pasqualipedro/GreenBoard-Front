@@ -26,7 +26,7 @@ class IncomeTable extends Component {
               className="accordion-collapse collapse show"
               aria-labelledby="panelsStayOpen-headingOne"
             >
-              <div class="table-responsive accordion-body">
+              <div className="table-responsive accordion-body">
 
                 <Header />
                 <CategoryContent />
