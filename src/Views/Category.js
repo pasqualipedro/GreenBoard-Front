@@ -4,6 +4,9 @@ import CategoryList from '../Components/CategoryList';
 import api from '../Api/api.config';
 import NavbarPrivate from '../Components/NavbarPrivate';
 import NavbarPublic from '../Components/NavbarPublic';
+import ButtonButton from '../Components/ButtonButton';
+import { Grid, CircularProgress, Button } from '@material-ui/core';
+
 
 
 class Category extends Component {
@@ -11,7 +14,7 @@ class Category extends Component {
         loading: false,
         categoryList: []
     };
-    
+
     getAllCategories = async () => {
         this.setState({
             loading: true
@@ -30,20 +33,28 @@ class Category extends Component {
         }
     };
 
-    componentDidMount(){
+    componentDidMount() {
         this.getAllCategories();
     };
 
 
-    render(){
+    render() {
         return (
-            <>  
-                <NavbarPublic/>
-                <NavbarPrivate/>
-                <CategoryForm updatedCategoryList={this.getAllCategories} history={this.props.history} />
-                { this.state.loading ? <h3>Loading</h3> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
-                <CategoryList {...this.state} updatedCategoryList={ this.getAllCategories } />
-                }
+            <>
+                <NavbarPublic />
+                <NavbarPrivate />
+
+                <div style={{ backgroundColor: "#C1FAE3" }}>
+                    <Grid container justifyContent="space-around" direction='column' alignItems='center'>
+                        <CategoryForm updatedCategoryList={this.getAllCategories} history={this.props.history} />
+                        <Grid container justifyContent="center" alignItems="center">
+                            <Button variant="contained" style={{ backgroundColor: "#92ffc0" }}>Add</Button>
+                        </Grid>
+                        {this.state.loading ? <CircularProgress style={{ display: 'block', margin: '10px auto' }} /> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
+                            <CategoryList {...this.state} updatedCategoryList={this.getAllCategories} />
+                        }
+                    </Grid>
+                </div>
             </>
         );
     };

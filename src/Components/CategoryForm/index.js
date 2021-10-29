@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ButtonButton from "../ButtonButton";
 import api from "../../Api/api.config";
+import { InputLabel,Input,TextField,Select,MenuItem } from "@material-ui/core";
 
 class CategoryForm extends Component {
   state = {
@@ -33,48 +34,65 @@ class CategoryForm extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit} id="category_form">
-            <label>Description:</label>
-                <input
-                type="text"
-                name="description"
-                value={this.state.description}
-                onChange={this.handleInput}
-                />
-            <label htmlFor="types">Choose category type:</label>
-              <select
-                id="types"
-                name="type"
-                form="category_form"
-                onChange={this.handleInput}
-                >
-                  <option disabled selected ></option>
-                  <option value="Income">Income</option>
-                  <option value="Expenditure">Expenditure</option>
-                  <option value="Savings">Savings</option>
-              </select>    
-            <label>Category Name:</label>
-                <input
-                type="text"
-                name="categoryName"
-                value={this.state.categoryName}
-                onChange={this.handleInput}
-                />
-            <label>item:</label>
-                <input
-                type="text"
-                name="item"
-                value={this.state.item}
-                onChange={this.handleInput}
-                />
-            <label>Budget:</label>
-                <input
-                type="number"
-                name="budget"
-                value={this.state.budget}
-                onChange={this.handleInput}
-                />
-            <ButtonButton type="submit" text="Add" />
-        </form>
+          <div class="form-group m-3">
+            <InputLabel><b>Description:</b></InputLabel>
+            <TextField variant="filled" size="small" >
+            <Input 
+              type="text"
+              name="description"
+              value={this.state.description}
+              onChange={this.handleInput}
+            />
+            </TextField>
+          </div>
+          <div class="form-group m-3">
+            <InputLabel htmlFor="types"><b>Choose Category Type:</b></InputLabel>
+            <Select fullWidth
+              id="types"
+              name="type"
+              form="category_form"
+              onChange={this.handleInput}
+            >
+              <MenuItem disabled selected ></MenuItem>
+              <MenuItem value="Income">Income</MenuItem>
+              <MenuItem value="Expenditure">Expenditure</MenuItem>
+              <MenuItem value="Savings">Savings</MenuItem>
+            </Select>
+          </div>
+          <div class="form-group m-3">
+            <InputLabel><b>Category Name:</b></InputLabel>
+            <TextField variant="filled" size="small" >
+            <Input
+              type="text"
+              name="categoryName"
+              value={this.state.categoryName}
+              onChange={this.handleInput}
+            />
+            </TextField>
+          </div>
+          <div class="form-group m-3">
+            <InputLabel><b>Item:</b></InputLabel>
+            <TextField variant="filled" size="small" >
+            <Input
+              type="text"
+              name="item"
+              value={this.state.item}
+              onChange={this.handleInput}
+            />
+            </TextField>
+          </div>
+          <div class="form-group m-3">
+            <InputLabel><b>Budget:</b></InputLabel>
+            <TextField variant="filled" size="small" >
+            <Input
+              type="number"
+              name="budget"
+              value={this.state.budget}
+              onChange={this.handleInput}
+            />
+            </TextField>
+          </div>
+        </form>            
       </div>
     );
   }

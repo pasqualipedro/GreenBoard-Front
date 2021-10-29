@@ -4,7 +4,8 @@ import TransactionList from '../Components/TransactionList';
 import api from '../Api/api.config';
 import NavbarPrivate from '../Components/NavbarPrivate';
 import NavbarPublic from '../Components/NavbarPublic';
-
+import { Grid, CircularProgress, Button } from '@material-ui/core';
+import ButtonButton from '../Components/ButtonButton';
 
 class Transaction extends Component {
     state = {
@@ -12,7 +13,7 @@ class Transaction extends Component {
         transactionList: [],
         categoryNameList: []
     };
-    
+
     getAllTransactions = async () => {
         this.setState({
             loading: true
@@ -29,7 +30,7 @@ class Transaction extends Component {
                 loading: false
             });
         }
-        
+
     };
 
     getAllCategories = async () => {
@@ -50,23 +51,31 @@ class Transaction extends Component {
         }
     };
 
-    
+
     componentDidMount() {
         this.getAllTransactions();
         this.getAllCategories();
     };
 
-    
 
-    render(){
+
+    render() {
         return (
-            <>  
-                <NavbarPublic/>
-                <NavbarPrivate/>
-                <TransactionForm updatedTransactionList={this.getAllTransactions}/>
-                { this.state.loading? <h3>Loading</h3> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
-                <TransactionList {...this.state} updatedTransactionList={ this.getAllTransactions } />
-                }
+            <>
+                <NavbarPublic />
+                <NavbarPrivate />
+                <div style={{ backgroundColor: "#C1FAE3" }}>
+                    <Grid container justifyContent="space-around" direction='column' alignItems='center'>
+                        <TransactionForm updatedTransactionList={this.getAllTransactions} />
+                        <Grid container justifyContent="center" alignItems="center">
+                            <ButtonButton type="submit" text="Add" />
+                        </Grid>
+                        {this.state.loading ?<CircularProgress style={{ display: 'block', margin: '10px auto' }} /> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
+
+                            <TransactionList {...this.state} updatedTransactionList={this.getAllTransactions} />
+                        }
+                    </Grid>
+                </div>
             </>
         );
     };
