@@ -7,7 +7,7 @@ class CategoryListItem extends Component {
         item: this.props.item,
         description: this.props.description,
         type: this.props.type,
-        categoryName: this.props.categoryName,
+        group: this.props.group,
         budget: this.props.budget,
         edit: false
     };
@@ -60,12 +60,12 @@ class CategoryListItem extends Component {
                                 onChange={this.handleInput}
                                 value={this.state.type}
                                 >
-                                <option disabled selected ></option>
+                                <option disabled defaultValue ></option>
                                 <option value="Income">Income</option>
                                 <option value="Expenditure">Expenditure</option>
                             </select>
                         </td>    
-                        <td><input type="text" name="categoryName" value={this.state.categoryName} onChange={this.handleInput}/></td>
+                        <td><input type="text" name="categoryName" value={this.state.group} onChange={this.handleInput}/></td>
                         <td><input type="text" name="item" value={this.state.item} onChange={this.handleInput}/></td>
                         <td><input type="number" name="budget" value={this.state.budget} onChange={this.handleInput}/></td>
                         <td>
@@ -83,7 +83,7 @@ class CategoryListItem extends Component {
                         {/**IF FALSE */}
                         <td>{this.props.description}</td>
                         <td>{this.props.type}</td>
-                        <td>{this.props.categoryName}</td>
+                        <td>{this.props.group}</td>
                         <td>{this.props.item}</td>
                         <td>{this.props.budget}</td>
                         <td>

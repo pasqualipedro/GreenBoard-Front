@@ -12,9 +12,9 @@ class TransactionList extends Component {
                         <tr>
                             <th>Input Date</th>
                             <th>End Date</th>
-                            <th>Type</th>
                             <th>Description</th>
-                            <th>Category</th>
+                            <th>Type</th>
+                            <th>Category Name</th>
                             <th>Value</th>
                             <th>Frequency</th>
                         </tr>

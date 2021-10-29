@@ -10,7 +10,7 @@ class Transaction extends Component {
     state = {
         loading: false,
         transactionList: [],
-        categoryNameList: []
+        categoryList: []
     };
     
     getAllTransactions = async () => {
@@ -39,7 +39,7 @@ class Transaction extends Component {
         try {
             const allCategories = await api.categoryFetchAll();
             this.setState({
-                categoryNameList: allCategories
+                categoryList: allCategories
             });
         } catch (error) {
             console.log(error, `Unable to fetch all categories`);
@@ -63,7 +63,7 @@ class Transaction extends Component {
             <>  
                 <NavbarPublic/>
                 <NavbarPrivate/>
-                <TransactionForm updatedTransactionList={this.getAllTransactions}/>
+                <TransactionForm updatedTransactionList={this.getAllTransactions} categoryList={this.state.categoryList} />
                 { this.state.loading? <h3>Loading</h3> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
                 <TransactionList {...this.state} updatedTransactionList={ this.getAllTransactions } />
                 }

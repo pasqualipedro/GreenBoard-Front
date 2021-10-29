@@ -7,8 +7,8 @@ class CategoryForm extends Component {
     item: "",
     description: "",
     type: "",
-    categoryName: "",
-    inUse: "",
+    group: "",
+    /* inUse: "", */
     budget: "",
   };
 
@@ -55,8 +55,8 @@ class CategoryForm extends Component {
             <label>Category Name:</label>
                 <input
                 type="text"
-                name="categoryName"
-                value={this.state.categoryName}
+                name="group"
+                value={this.state.group}
                 onChange={this.handleInput}
                 />
             <label>item:</label>

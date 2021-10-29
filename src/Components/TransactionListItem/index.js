@@ -4,11 +4,11 @@ import ButtonButton from "../ButtonButton"
 
 class TransactionListItem extends Component {
     state = {
-        startDate: this.props.name,
-        endDate: this.props.description,
-        type: this.props.type,
+        startDate: this.props.startDate,
+        endDate: this.props.endDate,
         description: this.props.description,
-        category: this.props.category,
+        type: this.props.type,
+        group: this.props.group,
         value: this.props.value,
         frequency: this.props.frequency,
         edit: false
@@ -57,9 +57,21 @@ class TransactionListItem extends Component {
                         {/**IF TRUE*/}
                         <td><input type="date" name="startDate" value={this.state.startDate} onChange={this.handleInput}/></td>
                         <td><input type="date" name="endDate" value={this.state.endDate} onChange={this.handleInput}/></td>
-                        <td><input type="text" name="type" value={this.state.type} onChange={this.handleInput}/></td>
                         <td><input type="text" name="description" value={this.state.description} onChange={this.handleInput}/></td>
-                        <td><input type="text" name="category" value={this.state.category} onChange={this.handleInput}/></td>
+                        <td><label htmlFor="types">Choose transaction type:</label>
+                            <select
+                                id="types"
+                                name="type"
+                                onChange={this.handleInput}
+                                value={this.state.type}
+                                >
+                                <option disabled defaultValue ></option>
+                                <option value="Income">Income</option>
+                                <option value="Expenditure">Expenditure</option>
+                                <option value="Savings">Savings</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="group" value={this.state.group} onChange={this.handleInput}/></td>
                         <td><input type="number" name="value" value={this.state.value} onChange={this.handleInput}/></td>
                         <td><input type="text" name="frequency" value={this.state.frequency} onChange={this.handleInput}/></td>
                         <td>
@@ -75,11 +87,11 @@ class TransactionListItem extends Component {
                 :  
                     (<>
                         {/**IF FALSE */}
-                        <td>{this.props.startDate}</td>
-                        <td>{this.props.endDate}</td>
-                        <td>{this.props.type}</td>
+                        <td>{new Date(this.props.startDate).toLocaleDateString(`pt-BR`,`UTC`)}</td>
+                        <td>{new Date(this.props.endDate).toLocaleDateString(`pt-BR`,`UTC`)}</td>
                         <td>{this.props.description}</td>
-                        <td>{this.props.category}</td>
+                        <td>{this.props.type}</td>
+                        <td>{this.props.group}</td>
                         <td>{this.props.value}</td>
                         <td>{this.props.frequency}</td>
                         <td>

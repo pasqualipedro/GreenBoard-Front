@@ -61,7 +61,7 @@ class SignupForm extends Component {
         event.preventDefault();
         try {
             await api.signup(this.state)
-            this.props.history.push("/dashboard");
+            this.props.history.push("/category");
         } catch (error) {
             console.log(error);
         }

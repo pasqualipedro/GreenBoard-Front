@@ -2,6 +2,13 @@ import React, { Component } from "react";
 
 class BalanceTable extends Component {
 
+  sumIncomeByMonth = async () => {
+    
+  }
+
+
+
+
 
   render() {
     return (
