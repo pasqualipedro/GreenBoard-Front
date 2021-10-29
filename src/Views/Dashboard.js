@@ -1,66 +1,90 @@
 import React, { Component } from "react";
 import NavbarPublic from "../Components/NavbarPublic";
 import NavbarPrivate from "../Components/NavbarPrivate";
-import BalanceTable from "../Components/DashBoard/BalanceTable"
-import IncomeTable from "../Components/DashBoard/IncomeTable"
-import SavingsTable from "../Components/DashBoard/SavingsTable"
-import ExpenditureTable from "../Components/DashBoard/ExpenditureTable"
-import api from '../Api/api.config';
-
+import BalanceTable from "../Components/DashBoard/BalanceTable";
+import IncomeTable from "../Components/DashBoard/IncomeTable";
+import SavingsTable from "../Components/DashBoard/SavingsTable";
+import ExpenditureTable from "../Components/DashBoard/ExpenditureTable";
+import api from "../Api/api.config";
 
 class DashBoard extends Component {
   state = {
     loading: false,
-    transactionList: [],
-    categoryList: []
-};
-
-getAllTransactions = async () => {
-    this.setState({
-        loading: true
-    });
-    try {
-        const allTransactions = await api.transactionFetchAll();
-        const incomeTransactions = allTransactions.filter((element) => {
-          return element.type = "Income" });
-        this.setState({
-            transactionList: allTransactions
-        });
-        console.log(incomeTransactions);
-    } catch (error) {
-        console.log(error, `Unable to fetch all transactions`);
-    } finally {
-        this.setState({
-            loading: false
-        });
-    }
+    categoryListAll: [],
     
-};
+    /** WHOLE categories by TYPE */
+    categoriesIncome: [],
+    categoriesExpenditure: [],
+    categoriesSavings: [],
 
-getAllCategories = async () => {
+    /** WHOLE transaction by TYPE */
+    transactionListAll: [],
+    transactionsIncomes: [],
+    transactionsExpenditures: [],
+    transactionsSavings: [],
+
+    /** transaction VALUES by TYPE */
+    transactionsIncomesValues: [],
+    transactionsExpendituresValues: [],
+    transactionsSavingsValues: [],
+  };
+
+  getAllTransactionsInfos = async () => {
     this.setState({
-        loading: true
+      loading: true,
     });
     try {
-        const allCategories = await api.categoryFetchAll();
-        this.setState({
-            categoryList: allCategories
-        });
+      const allTransactions = await api.transactionFetchAll();
+      const incomeTransactions = await allTransactions.filter((element) => {
+        return (element.type === `Income`);
+      });
+      const expenditureTransactions = await allTransactions.filter((element) => {
+        return (element.type === `Expenditure`);
+      });
+      const savingsTransactions = await allTransactions.filter((element) => {
+        return (element.type === `Savings`);
+      });
+      /* const  */
+      this.setState({
+        transactionListAll: allTransactions,
+        transactionsIncomes: incomeTransactions,
+        transactionsExpenditures: expenditureTransactions,
+        transactionsSavings: savingsTransactions,
+/*         transactionsIncomesValues: incomeTransactionsValues,
+        transactionsExpendituresValues: expenditureTransactionsValues,
+        transactionsSavingsValues: savingsTransactionsValues, */
+      });
     } catch (error) {
-        console.log(error, `Unable to fetch all categories`);
+      console.log(error, `Unable to fetch all transactions`);
     } finally {
-        this.setState({
-            loading: false
-        });
+      this.setState({
+        loading: false,
+      });
     }
-};
+  };
 
+  getAllCategories = async () => {
+    this.setState({
+      loading: true,
+    });
+    try {
+      const allCategories = await api.categoryFetchAll();
+      this.setState({
+        categoryListAll: allCategories,
+      });
+    } catch (error) {
+      console.log(error, `Unable to fetch all categories`);
+    } finally {
+      this.setState({
+        loading: false,
+      });
+    }
+  };
 
-componentDidMount() {
-    this.getAllTransactions();
+  componentDidMount() {
+    this.getAllTransactionsInfos();
     this.getAllCategories();
-};
-
+  };
 
 
   render() {
@@ -69,7 +93,7 @@ componentDidMount() {
         <NavbarPublic />
         <NavbarPrivate />
         <h1>Balance</h1>
-        <BalanceTable transactionList={this.state.transactionList} />
+        <BalanceTable transactionList={this.state.transactionListAll} />
         <div className="accordion" id="accordionPanelsStayOpenExample">
           <h1>Incomes</h1>
           <IncomeTable />
