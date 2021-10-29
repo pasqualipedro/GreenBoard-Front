@@ -9,6 +9,7 @@ class TransactionForm extends Component {
     description: "",
     type: "",
     group: "",
+    item: "",
     value: "",
     frequency: "",
   };
@@ -58,14 +59,14 @@ class TransactionForm extends Component {
             value={this.state.description}
             onChange={this.handleInput}
           />
-          <label htmlFor="types">Choose category type:</label>
+          <label htmlFor="types">Choose transaction type:</label>
           <select
             id="types"
             name="type"
             form="transaction_form"
             onChange={this.handleInput}
           >
-            <option disabled defaultValue ></option>
+            <option value="" selected disabled hidden>transaction type</option>
             <option value="Income">Income</option>
             <option value="Expenditure">Expenditure</option>
             <option value="Savings">Savings</option>
@@ -73,13 +74,25 @@ class TransactionForm extends Component {
           <label>Category Name:</label>
           <select
             id="categories"
-            name="category"
+            name="group"
             form="transaction_form"
             onChange={this.handleInput}
           >
-            <option disabled defaultValue ></option>
+            <option value="" selected disabled hidden>category name</option>
             {this.props.categoryList.map((element, index) => {
               return <option key={index} value={element.group}>{element.group}</option>;
+            })}
+          </select>
+          <label>Item:</label>
+          <select
+            id="items"
+            name="item"
+            form="transaction_form"
+            onChange={this.handleInput}
+          >
+            <option value="" selected disabled hidden>category item</option>
+            {this.props.categoryList.map((element, index) => {
+              return <option key={index} value={element.item}>{element.item}</option>;
             })}
           </select>
           <label>Value:</label>
@@ -89,14 +102,14 @@ class TransactionForm extends Component {
             value={this.state.value}
             onChange={this.handleInput}
           />
-          <label htmlFor="types">Frequency:</label>
+          <label htmlFor="frequencies">Frequency:</label>
           <select
             id="frequencies"
             name="frequency"
             form="transaction_form"
             onChange={this.handleInput}
           >
-            <option disabled selected></option>
+            <option value="" selected disabled hidden>frequency</option>
             <option value="Single Time">Single Time</option>
             <option value="Installment">Installment</option>
             <option value="Daily">Daily</option>

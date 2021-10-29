@@ -65,7 +65,7 @@ class Transaction extends Component {
                 <NavbarPrivate/>
                 <TransactionForm updatedTransactionList={this.getAllTransactions} categoryList={this.state.categoryList} />
                 { this.state.loading? <h3>Loading</h3> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
-                <TransactionList {...this.state} updatedTransactionList={ this.getAllTransactions } />
+                <TransactionList {...this.state} updatedTransactionList={ this.getAllTransactions } categoryList={ this.state.categoryList }/>
                 }
             </>
         );

@@ -15,6 +15,7 @@ class TransactionList extends Component {
                             <th>Description</th>
                             <th>Type</th>
                             <th>Category Name</th>
+                            <th>Category Item</th>
                             <th>Value</th>
                             <th>Frequency</th>
                         </tr>
@@ -23,7 +24,7 @@ class TransactionList extends Component {
                         {this.props.transactionList.map( (element, index) => {
                             return (
                                 <tr key={index} >
-                                    <TransactionListItem {...element} updatedTransactionList={this.props.updatedTransactionList} />                                
+                                    <TransactionListItem {...element} updatedTransactionList={this.props.updatedTransactionList} categoryList={this.props.categoryList} />                                
                                 </tr>
                             )
                         })}

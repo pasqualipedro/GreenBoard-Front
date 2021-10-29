@@ -47,7 +47,7 @@ class CategoryForm extends Component {
                 form="category_form"
                 onChange={this.handleInput}
                 >
-                  <option disabled selected ></option>
+                  <option value="" selected disabled hidden>category type</option>
                   <option value="Income">Income</option>
                   <option value="Expenditure">Expenditure</option>
                   <option value="Savings">Savings</option>

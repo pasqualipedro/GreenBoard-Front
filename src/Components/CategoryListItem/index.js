@@ -60,9 +60,10 @@ class CategoryListItem extends Component {
                                 onChange={this.handleInput}
                                 value={this.state.type}
                                 >
-                                <option disabled defaultValue ></option>
+                                <option value="" selected disabled hidden>category type</option>
                                 <option value="Income">Income</option>
                                 <option value="Expenditure">Expenditure</option>
+                                <option value="Savings">Savings</option>
                             </select>
                         </td>    
                         <td><input type="text" name="categoryName" value={this.state.group} onChange={this.handleInput}/></td>
