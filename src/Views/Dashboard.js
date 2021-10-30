@@ -1,32 +1,30 @@
 import React, { Component } from "react";
 import NavbarPublic from "../Components/NavbarPublic";
 import NavbarPrivate from "../Components/NavbarPrivate";
-import BalanceTable from "../Components/DashBoard/BalanceTable";
+import TableBalance from "../Components/DashBoard/TableBalance";
 import IncomeTable from "../Components/DashBoard/IncomeTable";
 import SavingsTable from "../Components/DashBoard/SavingsTable";
 import ExpenditureTable from "../Components/DashBoard/ExpenditureTable";
 import api from "../Api/api.config";
 
+
+
 class DashBoard extends Component {
   state = {
     loading: false,
     categoryListAll: [],
-    
+    transactionListAll: [],
+
     /** WHOLE categories by TYPE */
     categoriesIncome: [],
     categoriesExpenditure: [],
     categoriesSavings: [],
 
     /** WHOLE transaction by TYPE */
-    transactionListAll: [],
-    transactionsIncomes: [],
-    transactionsExpenditures: [],
+    transactionsIncome: [],
+    transactionsExpenditure: [],
     transactionsSavings: [],
 
-    /** transaction VALUES by TYPE */
-    transactionsIncomesValues: [],
-    transactionsExpendituresValues: [],
-    transactionsSavingsValues: [],
   };
 
   getAllTransactionsInfos = async () => {
@@ -34,25 +32,25 @@ class DashBoard extends Component {
       loading: true,
     });
     try {
+      /** All transactions */
       const allTransactions = await api.transactionFetchAll();
-      const incomeTransactions = await allTransactions.filter((element) => {
-        return (element.type === `Income`);
+      
+      /** Transactions by type */
+      const transactionsIncome = await allTransactions.filter((element) => {
+        return element.type === `Income`;
       });
-      const expenditureTransactions = await allTransactions.filter((element) => {
-        return (element.type === `Expenditure`);
+      const transactionsExpenditure = await allTransactions.filter((element) => {
+          return element.type === `Expenditure`;
       });
-      const savingsTransactions = await allTransactions.filter((element) => {
-        return (element.type === `Savings`);
+      const transactionsSavings = await allTransactions.filter((element) => {
+        return element.type === `Savings`;
       });
-      /* const  */
+
       this.setState({
         transactionListAll: allTransactions,
-        transactionsIncomes: incomeTransactions,
-        transactionsExpenditures: expenditureTransactions,
-        transactionsSavings: savingsTransactions,
-/*         transactionsIncomesValues: incomeTransactionsValues,
-        transactionsExpendituresValues: expenditureTransactionsValues,
-        transactionsSavingsValues: savingsTransactionsValues, */
+        transactionsIncome: transactionsIncome,
+        transactionsExpenditure: transactionsExpenditure,
+        transactionsSavings: transactionsSavings,
       });
     } catch (error) {
       console.log(error, `Unable to fetch all transactions`);
@@ -68,9 +66,25 @@ class DashBoard extends Component {
       loading: true,
     });
     try {
+      /** All Categories */
       const allCategories = await api.categoryFetchAll();
+
+      /** Categories by type */
+      const categoriesIncome = await allCategories.filter((element) => {
+        return element.type === `Income`;
+      });
+      const categoriesExpenditure = await allCategories.filter((element) => {
+        return element.type === `Expenditure`;
+      });
+      const categoriesSavings = await allCategories.filter((element) => {
+        return element.type === `Savings`;
+      });
+
       this.setState({
         categoryListAll: allCategories,
+        categoriesIncome: categoriesIncome,
+        categoriesExpenditure: categoriesExpenditure,
+        categoriesSavings: categoriesSavings,
       });
     } catch (error) {
       console.log(error, `Unable to fetch all categories`);
@@ -84,8 +98,7 @@ class DashBoard extends Component {
   componentDidMount() {
     this.getAllTransactionsInfos();
     this.getAllCategories();
-  };
-
+  }
 
   render() {
     return (
@@ -93,7 +106,12 @@ class DashBoard extends Component {
         <NavbarPublic />
         <NavbarPrivate />
         <h1>Balance</h1>
-        <BalanceTable transactionList={this.state.transactionListAll} />
+        <TableBalance
+          transactionsIncomes={this.state.transactionsIncome}
+          transactionsExpenditures={this.state.transactionsExpenditure}
+          transactionsSavings={this.state.transactionsSavings}
+        />
+        
         <div className="accordion" id="accordionPanelsStayOpenExample">
           <h1>Incomes</h1>
           <IncomeTable />

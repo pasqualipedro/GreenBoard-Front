@@ -66,7 +66,7 @@ class CategoryListItem extends Component {
                                 <option value="Savings">Savings</option>
                             </select>
                         </td>    
-                        <td><input type="text" name="categoryName" value={this.state.group} onChange={this.handleInput}/></td>
+                        <td><input type="text" name="group" value={this.state.group} onChange={this.handleInput}/></td>
                         <td><input type="text" name="item" value={this.state.item} onChange={this.handleInput}/></td>
                         <td><input type="number" name="budget" value={this.state.budget} onChange={this.handleInput}/></td>
                         <td>

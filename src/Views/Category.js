@@ -40,7 +40,7 @@ class Category extends Component {
             <>  
                 <NavbarPublic/>
                 <NavbarPrivate/>
-                <CategoryForm updatedCategoryList={this.getAllCategories} history={this.props.history} />
+                <CategoryForm updatedCategoryList={this.getAllCategories} history={this.props.history} categoryList={this.state.categoryList} />
                 { this.state.loading ? <h3>Loading</h3> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
                 <CategoryList {...this.state} updatedCategoryList={ this.getAllCategories } />
                 }

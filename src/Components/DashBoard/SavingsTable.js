@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import MonthHeader from "../DashBoard/MonthHeader";
-import CategoryListContent from "./CategoryListContent";
-import TotalValues from "../DashBoard/TotalValues";
+import TableHeaderMonth from "./TableHeaderMonth";
+import TableRow from "./TableRow";
+import TableFooter from "./TableFooter";
 
 class SavingsTable extends Component {
   render() {
@@ -17,7 +17,7 @@ class SavingsTable extends Component {
               aria-expanded="true"
               aria-controls="panelsStayOpen-collapseOne"
             >
-              POUPANCA ITAU - Category NAME
+              FUTURO - LONGO PRAZO
             </button>
           </h2>
           <div
@@ -25,11 +25,39 @@ class SavingsTable extends Component {
             className="accordion-collapse collapse show"
             aria-labelledby="panelsStayOpen-headingOne"
           >
-            <div className="accordion-body table-responsive">
-              <MonthHeader />
-              <CategoryListContent />
-              <TotalValues />
+            <div className="accordion-body table-responsive"></div>
+            {/** TABLE */}
+            <div className="table-responsive">
+              <table className="table table-striped table-bordered">
+                <tbody>
+                  <tr>
+                    <td colspan="4">
+                      <table className="table mb-0 table-hover table-sm align-middle">
+                        <thead>
+                          <TableHeaderMonth />
+                        </thead>
+                        <thead>
+                          <th scope="col">Poupanca ITAU</th>
+                        </thead>
+                        <tbody>
+                          <TableRow />
+                        </tbody>
+                        <thead>
+                          <th scope="col">Fundo Investimento - Santander</th>
+                        </thead>
+                        <tbody>
+                          <TableRow />
+                        </tbody>
+                        <tfoot>
+                          <TableFooter />
+                        </tfoot>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+            {/** TABLE */}
           </div>
         </div>
       </>

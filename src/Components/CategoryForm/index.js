@@ -29,6 +29,12 @@ class CategoryForm extends Component {
     }
   };
 
+/*   uniqueGroupNames = async () => {
+    const newArray = await this.props.categoryList.map((element) => {
+      return [...new Set(element.group)]
+    });
+  }; */
+
   render() {
     return (
       <div>
@@ -51,7 +57,19 @@ class CategoryForm extends Component {
                   <option value="Income">Income</option>
                   <option value="Expenditure">Expenditure</option>
                   <option value="Savings">Savings</option>
-              </select>    
+              </select>
+            {/* <label htmlFor="groups">Category Name:</label>
+              <select
+                  id="groups"
+                  name="group"
+                  onChange={this.handleInput}
+                  value={this.state.group}
+              >
+                  <option value="" selected disabled hidden>category name</option>
+                  {uniqueGroupNames.map((element, index) => {
+                  return <option key={index} value={element.group}>{element.group}</option>;
+                  })}
+              </select>  */}     
             <label>Category Name:</label>
                 <input
                 type="text"
