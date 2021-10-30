@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# Greenbook
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TAKE CARE OF YOUR MONEY !!!
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+GreenBook is a web dev application, with front and back development created as Ironhack's third-module bootcamp project.
+We had the initial idea of building something that would be useful not only in terms of learning but also something that we could keep in development, adding features.
+The choice of theme was made due to the importance that the financial organization, mainly in the scenario of economic and professional uncertainties that we are inserted nowadays.
+In addition, the theme is based on the lack of financial education in the basic education that there is in Brazil.
+The project is based on an application aimed at the user's financial organization, so that he/she can register all their financial transactions in order to be able to carry out a more detailed monitoring of their expenses and earnings. After completing the user's registration, he is directed directly to a categories screen in which he is allowed to input data from the categories that are part of his financial life, such as House Expenses, Transport Expenses, Salary, Bonuses.
+From that, a dashboard is generated, with the listed categories and their respective budgets. The user has the possibility of incrementing transactions, in each of the categories, according to the passage of time and thus have information about his financial life, in a clear and centralized way.
+Any questions or suggestions, will be available at the bottom of the page our contacts and the source code of github.
 
-### `npm start`
+## Development
+The Front End Page was developed in REACT using the conection with the Back End, with the same name.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
+Libraries used
+- Styled-components
+- Material-UI
+- React-bootstrap
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
