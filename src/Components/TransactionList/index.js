@@ -6,7 +6,12 @@ class TransactionList extends Component {
     
     render() {
         return (
-            <div>
+            <div style={
+                {
+                    height: 350,
+                    overflowY: "scroll"
+                }
+            }>
                 <table>
                     <thead>
                         <tr>

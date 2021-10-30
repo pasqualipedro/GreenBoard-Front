@@ -114,11 +114,17 @@ class DashBoard extends Component {
         
         <div className="accordion" id="accordionPanelsStayOpenExample">
           <h1>Incomes</h1>
-          <IncomeTable />
+          {this.state.categoriesIncome.map((element, index) => {
+            return <IncomeTable key={index} categoryItem={element.item} tableNumber={index} categoryBudget={element.budget} transactionsIncome={this.state.transactionsIncome} />
+          })}
           <h1>Savings</h1>
-          <SavingsTable />
+          {this.state.categoriesSavings.map((element, index) => {
+            return <SavingsTable key={index} categoryName={element.item} tableNumber={index}/>
+          })}
           <h1>Expenditures</h1>
-          <ExpenditureTable />
+          {this.state.categoriesExpenditure.map((element, index) => {
+            return <ExpenditureTable key={index} categoryName={element.item} tableNumber={index}/>
+          })}
         </div>
       </>
     );

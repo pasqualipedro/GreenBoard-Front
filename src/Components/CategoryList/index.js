@@ -6,7 +6,12 @@ class CategoryList extends Component {
     
     render() {
         return (
-            <div>
+            <div style={
+                {
+                    height: 350,
+                    overflowY: "scroll"
+                }
+            }>
                 <table>
                     <thead>
                         <tr>
@@ -17,15 +22,15 @@ class CategoryList extends Component {
                             <th>Budget</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {this.props.categoryList.map( (element, index) => {
-                            return (
-                                <tr key={index} >
-                                    <CategoryListItem {...element} updatedCategoryList={this.props.updatedCategoryList} />                                
-                                </tr>
-                            )
-                        })}
-                    </tbody>
+                        <tbody >
+                            {this.props.categoryList.map( (element, index) => {
+                                return (
+                                    <tr key={index} >
+                                        <CategoryListItem {...element} updatedCategoryList={this.props.updatedCategoryList} />                                
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
                 </table>
             </div>
         )

@@ -8,22 +8,22 @@ class SavingsTable extends Component {
     return (
       <>
         <div className="accordion-item">
-          <h2 className="accordion-header" id="panelsStayOpen-headingOne">
+          <h2 className="accordion-header" id={`panelsStayOpen-heading${this.props.tableNumber}S`} >
             <button
               className="accordion-button"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseOne"
+              data-bs-target={`#panelsStayOpen-collapse${this.props.tableNumber}S`}
               aria-expanded="true"
-              aria-controls="panelsStayOpen-collapseOne"
+              aria-controls={`panelsStayOpen-collapse${this.props.tableNumber}S`}
             >
-              FUTURO - LONGO PRAZO
+              {this.props.categoryName}
             </button>
           </h2>
           <div
-            id="panelsStayOpen-collapseOne"
+            id={`panelsStayOpen-collapse${this.props.tableNumber}S`}
             className="accordion-collapse collapse show"
-            aria-labelledby="panelsStayOpen-headingOne"
+            aria-labelledby={`panelsStayOpen-heading${this.props.tableNumber}S`}
           >
             <div className="accordion-body table-responsive"></div>
             {/** TABLE */}
