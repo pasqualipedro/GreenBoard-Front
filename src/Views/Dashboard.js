@@ -7,8 +7,6 @@ import SavingsTable from "../Components/DashBoard/SavingsTable";
 import ExpenditureTable from "../Components/DashBoard/ExpenditureTable";
 import api from "../Api/api.config";
 
-
-
 class DashBoard extends Component {
   state = {
     loading: false,
@@ -24,7 +22,6 @@ class DashBoard extends Component {
     transactionsIncome: [],
     transactionsExpenditure: [],
     transactionsSavings: [],
-
   };
 
   getAllTransactionsInfos = async () => {
@@ -34,14 +31,16 @@ class DashBoard extends Component {
     try {
       /** All transactions */
       const allTransactions = await api.transactionFetchAll();
-      
+
       /** Transactions by type */
       const transactionsIncome = await allTransactions.filter((element) => {
         return element.type === `Income`;
       });
-      const transactionsExpenditure = await allTransactions.filter((element) => {
+      const transactionsExpenditure = await allTransactions.filter(
+        (element) => {
           return element.type === `Expenditure`;
-      });
+        }
+      );
       const transactionsSavings = await allTransactions.filter((element) => {
         return element.type === `Savings`;
       });
@@ -95,6 +94,17 @@ class DashBoard extends Component {
     }
   };
 
+  /* filteringTransactions = async () => {
+    try {
+      const groupBy = await (key, arr) => arr.reduce((acc, value) => ... , {})
+      console.log(groupBy())
+      
+    } catch (error) {
+      
+    }
+
+  }; */
+
   componentDidMount() {
     this.getAllTransactionsInfos();
     this.getAllCategories();
@@ -111,20 +121,19 @@ class DashBoard extends Component {
           transactionsExpenditures={this.state.transactionsExpenditure}
           transactionsSavings={this.state.transactionsSavings}
         />
-        
         <div className="accordion" id="accordionPanelsStayOpenExample">
-          <h1>Incomes</h1>
-          {this.state.categoriesIncome.map((element, index) => {
-            return <IncomeTable key={index} categoryItem={element.item} tableNumber={index} categoryBudget={element.budget} transactionsIncome={this.state.transactionsIncome} />
-          })}
-          <h1>Savings</h1>
-          {this.state.categoriesSavings.map((element, index) => {
-            return <SavingsTable key={index} categoryName={element.item} tableNumber={index}/>
-          })}
-          <h1>Expenditures</h1>
-          {this.state.categoriesExpenditure.map((element, index) => {
-            return <ExpenditureTable key={index} categoryName={element.item} tableNumber={index}/>
-          })}
+          <hr/>
+          <IncomeTable
+            categoriesIncome={this.state.categoriesIncome}
+          />
+          <hr/>
+          <SavingsTable
+            categoriesSavings={this.state.categoriesSavings}
+          />
+          <hr/>
+          <ExpenditureTable
+            categoriesExpenditure={this.state.categoriesExpenditure}
+          />
         </div>
       </>
     );

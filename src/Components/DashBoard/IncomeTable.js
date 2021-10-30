@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TableHeaderMonth from "./TableHeaderMonth";
-import TableRow from "./TableRow";
 import TableFooter from "./TableFooter";
+import TableRowsList from "./TableRowsList.js";
 
 class IncomeTable extends Component {
   render() {
@@ -17,7 +17,7 @@ class IncomeTable extends Component {
               aria-expanded="true"
               aria-controls={`panelsStayOpen-collapse${this.props.tableNumber}I`}
             >
-              {this.props.categoryItem}
+              Incomes
             </button>
           </h2>
           <div
@@ -36,22 +36,20 @@ class IncomeTable extends Component {
                         <thead>
                           <TableHeaderMonth />
                         </thead>
-                        {}
-
-
-                        {/* <thead>
-                          <td scope="col">budget</td>
-                        </thead> */}
-                        <tbody>
-                          <TableRow rowTitle={"real"}/>
-                          <TableRow rowTitle={"budget"} monthValue={this.props.categoryBudget}/>
-                        </tbody>
-                        
-
-
-                        <tfoot>
+                        <thead>
                           <TableFooter />
-                        </tfoot>
+                        </thead>
+                        {/** repetitive "sub" header + data rows ---- */}
+                        {this.props.categoriesIncome.map((element, index) => {
+                          return (
+                            <TableRowsList 
+                              key={index}
+                              categoryItem={element.item}
+                              categoryBudget={element.budget}
+                            />
+                          );  
+                        })}
+                        {/** ------ */}  
                       </table>
                     </td>
                   </tr>

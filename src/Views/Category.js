@@ -4,7 +4,7 @@ import CategoryList from "../Components/CategoryList";
 import api from "../Api/api.config";
 import NavbarPrivate from "../Components/NavbarPrivate";
 import NavbarPublic from "../Components/NavbarPublic";
-import { Grid, CircularProgress, Button } from "@material-ui/core";
+import { Grid, CircularProgress } from "@material-ui/core";
 
 class Category extends Component {
   state = {
@@ -52,14 +52,7 @@ class Category extends Component {
               history={this.props.history}
               categoryList={this.state.categoryList}
             />
-            <Grid container justifyContent="center" alignItems="center">
-              <Button
-                variant="contained"
-                style={{ backgroundColor: "#92ffc0" }}
-              >
-                Add
-              </Button>
-            </Grid>
+            
             {this.state.loading ? (
               <CircularProgress
                 style={{ display: "block", margin: "10px auto" }}
