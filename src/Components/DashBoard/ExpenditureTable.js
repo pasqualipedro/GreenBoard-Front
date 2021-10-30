@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TableHeaderMonth from "./TableHeaderMonth";
-import TableRow from "./TableRow";
+import TableRowsList from "./TableRowsList.js";
 import TableFooter from "./TableFooter";
 
 class ExpenditureTable extends Component {
@@ -17,7 +17,7 @@ class ExpenditureTable extends Component {
               aria-expanded="true"
               aria-controls={`panelsStayOpen-collapse${this.props.tableNumber}E`}
             >
-              {this.props.categoryName}
+              Expenditures
             </button>
           </h2>
           <div
@@ -37,26 +37,19 @@ class ExpenditureTable extends Component {
                           <TableHeaderMonth />
                         </thead>
                         <thead>
-                          <th scope="col">gasolina</th>
-                        </thead>
-                        <tbody>
-                          <TableRow />
-                        </tbody>
-                        <thead>
-                          <th scope="col">IPVA</th>
-                        </thead>
-                        <tbody>
-                          <TableRow />
-                        </tbody>
-                        <thead>
-                          <th scope="col">manutencao/revisao</th>
-                        </thead>
-                        <tbody>
-                          <TableRow />
-                        </tbody>
-                        <tfoot>
                           <TableFooter />
-                        </tfoot>
+                        </thead>
+                        {/** repetitive "sub" header + data rows ---- */}
+                        {this.props.categoriesExpenditure.map((element, index) => {
+                          return (
+                            <TableRowsList 
+                              key={index}
+                              categoryItem={element.item}
+                              categoryBudget={element.budget}
+                            />
+                          );  
+                        })}
+                        {/** ------ */}
                       </table>
                     </td>
                   </tr>

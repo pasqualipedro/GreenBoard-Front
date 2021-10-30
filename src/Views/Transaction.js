@@ -5,7 +5,6 @@ import api from '../Api/api.config';
 import NavbarPrivate from '../Components/NavbarPrivate';
 import NavbarPublic from '../Components/NavbarPublic';
 import { Grid, CircularProgress } from '@material-ui/core';
-import ButtonButton from '../Components/ButtonButton';
 
 class Transaction extends Component {
     state = {
@@ -67,9 +66,7 @@ class Transaction extends Component {
                 <div style={{ backgroundColor: "#C1FAE3" }}>
                     <Grid container justifyContent="space-around" direction='column' alignItems='center'>
                         <TransactionForm updatedTransactionList={this.getAllTransactions} categoryList={this.state.categoryList} />
-                        <Grid container justifyContent="center" alignItems="center">
-                            <ButtonButton type="submit" text="Add" />
-                        </Grid>
+                        
                         {this.state.loading ?<CircularProgress style={{ display: 'block', margin: '10px auto' }} /> : /**--------------->>>> APRIMORAR ESTE LOADING!!!! */
                             <TransactionList {...this.state} updatedTransactionList={ this.getAllTransactions } categoryList={ this.state.categoryList }/>
                         };

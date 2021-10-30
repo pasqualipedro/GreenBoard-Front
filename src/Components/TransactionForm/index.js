@@ -6,6 +6,8 @@ import {
   TextField,
   Select,
   MenuItem,
+  Button,
+  Grid,
 } from "@material-ui/core";
 
 class TransactionForm extends Component {
@@ -63,14 +65,14 @@ class TransactionForm extends Component {
 
           <div class="form-group m-3">
             <InputLabel>Description:</InputLabel>
-            <TextField variant="filled" size="small">
-              <Input
-                type="text"
-                name="description"
-                value={this.state.description}
-                onChange={this.handleInput}
-              />
-            </TextField>
+            <TextField
+              variant="filled"
+              size="small"
+              type="text"
+              name="description"
+              value={this.state.description}
+              onChange={this.handleInput}
+            ></TextField>
           </div>
 
           <div class="form-group m-3">
@@ -137,14 +139,14 @@ class TransactionForm extends Component {
 
           <div class="form-group m-3">
             <InputLabel>Value:</InputLabel>
-            <TextField variant="filled" size="small">
-              <Input
-                type="number"
-                name="value"
-                value={this.state.value}
-                onChange={this.handleInput}
-              />
-            </TextField>
+            <TextField
+              variant="filled"
+              size="small"
+              type="number"
+              name="value"
+              value={this.state.value}
+              onChange={this.handleInput}
+            ></TextField>
           </div>
 
           <div class="form-group m-3">
@@ -173,7 +175,16 @@ class TransactionForm extends Component {
               <MenuItem value="By 6 Months">By 6 Months</MenuItem>
             </Select>
           </div>
-          
+
+          <Grid container justifyContent="center" alignItems="center">
+            <Button
+              variant="contained"
+              style={{ backgroundColor: "#92ffc0" }}
+              type="submit"
+            >
+              Add
+            </Button>
+          </Grid>
         </form>
       </div>
     );

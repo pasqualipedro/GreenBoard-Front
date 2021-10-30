@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import ButtonButton from "../ButtonButton";
 import api from "../../Api/api.config";
 import {
   InputLabel,
-  Input,
   TextField,
   Select,
   MenuItem,
+  Grid,
+  Button
 } from "@material-ui/core";
 
 class CategoryForm extends Component {
@@ -21,6 +21,7 @@ class CategoryForm extends Component {
 
   handleInput = (event) => {
     const { name, value } = event.target;
+    console.log(name, value);
     this.setState({
       [name]: value,
     });
@@ -31,16 +32,11 @@ class CategoryForm extends Component {
     try {
       await api.categoryCreate(this.state);
       await this.props.updatedCategoryList();
+      
     } catch (error) {
       console.log(error);
     }
   };
-
-  /*   uniqueGroupNames = async () => {
-    const newArray = await this.props.categoryList.map((element) => {
-      return [...new Set(element.group)]
-    });
-  }; */
 
   render() {
     return (
@@ -50,14 +46,14 @@ class CategoryForm extends Component {
             <InputLabel>
               <b>Description:</b>
             </InputLabel>
-            <TextField variant="filled" size="small">
-              <Input
-                type="text"
-                name="description"
-                value={this.state.description}
-                onChange={this.handleInput}
-              />
-            </TextField>
+            <TextField
+              variant="filled"
+              size="small"
+              type="text"
+              name="description"
+              value={this.state.description}
+              onChange={this.handleInput}
+            ></TextField>
           </div>
 
           <div class="form-group m-3">
@@ -84,43 +80,53 @@ class CategoryForm extends Component {
             <InputLabel>
               <b>Category Name:</b>
             </InputLabel>
-            <TextField variant="filled" size="small">
-              <Input
-                type="text"
-                name="group"
-                value={this.state.group}
-                onChange={this.handleInput}
-              />
-            </TextField>
+            <TextField
+              variant="filled"
+              size="small"
+              type="text"
+              name="group"
+              value={this.state.group}
+              onChange={this.handleInput}
+            ></TextField>
           </div>
 
           <div class="form-group m-3">
             <InputLabel>
               <b>Item:</b>
             </InputLabel>
-            <TextField variant="filled" size="small">
-              <Input
-                type="text"
-                name="item"
-                value={this.state.item}
-                onChange={this.handleInput}
-              />
-            </TextField>
+            <TextField
+              variant="filled"
+              size="small"
+              type="text"
+              name="item"
+              value={this.state.item}
+              onChange={this.handleInput}
+            ></TextField>
           </div>
 
           <div class="form-group m-3">
             <InputLabel>
               <b>Budget:</b>
             </InputLabel>
-            <TextField variant="filled" size="small">
-              <Input
-                type="number"
-                name="budget"
-                value={this.state.budget}
-                onChange={this.handleInput}
-              />
-            </TextField>
+            <TextField
+              variant="filled"
+              size="small"
+              type="number"
+              name="budget"
+              value={this.state.budget}
+              onChange={this.handleInput}
+            ></TextField>
           </div>
+
+          <Grid container justifyContent="center" alignItems="center">
+            <Button
+              variant="contained"
+              style={{ backgroundColor: "#92ffc0" }}
+              type="submit"
+            >
+              Add
+            </Button>
+          </Grid>
         </form>
       </div>
     );

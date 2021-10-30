@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TableHeaderMonth from "./TableHeaderMonth";
-import TableRow from "./TableRow";
+import TableRowsList from "./TableRowsList.js";
 import TableFooter from "./TableFooter";
 
 class SavingsTable extends Component {
@@ -17,7 +17,7 @@ class SavingsTable extends Component {
               aria-expanded="true"
               aria-controls={`panelsStayOpen-collapse${this.props.tableNumber}S`}
             >
-              {this.props.categoryName}
+              Savings
             </button>
           </h2>
           <div
@@ -37,20 +37,19 @@ class SavingsTable extends Component {
                           <TableHeaderMonth />
                         </thead>
                         <thead>
-                          <th scope="col">Poupanca ITAU</th>
-                        </thead>
-                        <tbody>
-                          <TableRow />
-                        </tbody>
-                        <thead>
-                          <th scope="col">Fundo Investimento - Santander</th>
-                        </thead>
-                        <tbody>
-                          <TableRow />
-                        </tbody>
-                        <tfoot>
                           <TableFooter />
-                        </tfoot>
+                        </thead>
+                        {/** repetitive "sub" header + data rows ---- */}
+                        {this.props.categoriesSavings.map((element, index) => {
+                          return (
+                            <TableRowsList 
+                              key={index}
+                              categoryItem={element.item}
+                              categoryBudget={element.budget}
+                            />
+                          );  
+                        })}
+                        {/** ------ */}
                       </table>
                     </td>
                   </tr>
