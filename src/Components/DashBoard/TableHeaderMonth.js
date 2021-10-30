@@ -5,7 +5,7 @@ class TableHeaderMonth extends Component {
     return (
       <>
         <tr>
-          <th colspan="4">MONTH</th>
+          <th colspan="4">month</th>
           <td colspan="4">January</td>
           <td colspan="4">February</td>
           <td colspan="4">March</td>

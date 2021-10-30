@@ -8,22 +8,22 @@ class ExpenditureTable extends Component {
     return (
       <>
         <div className="accordion-item">
-          <h2 className="accordion-header" id="panelsStayOpen-headingOne">
+          <h2 className="accordion-header" id={`panelsStayOpen-heading${this.props.tableNumber}E`} >
             <button
               className="accordion-button"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseOne"
+              data-bs-target={`#panelsStayOpen-collapse${this.props.tableNumber}E`}
               aria-expanded="true"
-              aria-controls="panelsStayOpen-collapseOne"
+              aria-controls={`panelsStayOpen-collapse${this.props.tableNumber}E`}
             >
-              CARRO/MOBILIDADE
+              {this.props.categoryName}
             </button>
           </h2>
           <div
-            id="panelsStayOpen-collapseOne"
+            id={`panelsStayOpen-collapse${this.props.tableNumber}E`}
             className="accordion-collapse collapse show"
-            aria-labelledby="panelsStayOpen-headingOne"
+            aria-labelledby={`panelsStayOpen-heading${this.props.tableNumber}E`}
           >
             <div className="accordion-body table-responsive"></div>
             {/** TABLE */}

@@ -8,22 +8,22 @@ class IncomeTable extends Component {
     return (
       <>
         <div className="accordion-item">
-          <h2 className="accordion-header" id="panelsStayOpen-headingOne">
+          <h2 className="accordion-header" id={`panelsStayOpen-heading${this.props.tableNumber}I`} >
             <button
               className="accordion-button"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseOne"
+              data-bs-target={`#panelsStayOpen-collapse${this.props.tableNumber}I`}
               aria-expanded="true"
-              aria-controls="panelsStayOpen-collapseOne"
+              aria-controls={`panelsStayOpen-collapse${this.props.tableNumber}I`}
             >
-              PROFISSIONAL
+              {this.props.categoryItem}
             </button>
           </h2>
           <div
-            id="panelsStayOpen-collapseOne"
+            id={`panelsStayOpen-collapse${this.props.tableNumber}I`}
             className="accordion-collapse collapse show"
-            aria-labelledby="panelsStayOpen-headingOne"
+            aria-labelledby={`panelsStayOpen-heading${this.props.tableNumber}I`}
           >
             <div className="accordion-body table-responsive"></div>
             {/** TABLE */}
@@ -36,18 +36,19 @@ class IncomeTable extends Component {
                         <thead>
                           <TableHeaderMonth />
                         </thead>
-                        <thead>
-                          <th scope="col">Salario Pedro - ITEM</th>
-                        </thead>
+                        {}
+
+
+                        {/* <thead>
+                          <td scope="col">budget</td>
+                        </thead> */}
                         <tbody>
-                          <TableRow />
+                          <TableRow rowTitle={"real"}/>
+                          <TableRow rowTitle={"budget"} monthValue={this.props.categoryBudget}/>
                         </tbody>
-                        <thead>
-                          <th scope="col">Salario Renata - ITEM</th>
-                        </thead>
-                        <tbody>
-                          <TableRow />
-                        </tbody>
+                        
+
+
                         <tfoot>
                           <TableFooter />
                         </tfoot>

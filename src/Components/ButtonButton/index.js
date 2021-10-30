@@ -6,7 +6,7 @@ const Container = styled.button`
         border-radius: 5px;
         border: 2px solid rgba(38,173,95,68);
         margin: 1em;
-        padding: 0.25em 1em;
+        text-direction: center;
         text-decoration: none;
         color: black;
         font-weight: bold;
@@ -18,7 +18,7 @@ class ButtonButton extends Component{
     {
         return(
             <Container>
-                <p onClick={this.props.action}>{this.props.text}</p>                  
+                <span onClick={this.props.action} style={{padding: '3 14'}}>{this.props.text}</span>                  
             </Container>
         )
     }
