@@ -2,6 +2,10 @@
 
 TAKE CARE OF YOUR MONEY !!!
 
+Link slides: https://docs.google.com/presentation/d/19ygJnlHy6QNASlDUk-e9qf_riWxUNuFUsd5ut26OemI/edit?usp=sharing
+Link GITHUB Back-End: https://github.com/pasqualipedro/GreenBoard-Back
+Link Front-End deploy: https://greenbook-front.herokuapp.com/
+
 ## About
 
 GreenBook is a web dev application, with front and back development created as Ironhack's third-module bootcamp project.
